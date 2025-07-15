@@ -486,7 +486,6 @@ background-color: #f8f8f8;  /* Box background */
   background: rgba(0,0,0,0.6);
   z-index: 1000;
 }
-
 /* === MOBILE RESPONSIVENESS === */
 @media (max-width: 768px) {
   .topbar {
@@ -549,5 +548,45 @@ background-color: #f8f8f8;  /* Box background */
 
   .blog-title {
     font-size: 1.3rem;
+  }
+}
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav a {
+    color: white;
+    margin: 1rem 0;
+    font-size: 1rem;
   }
 }

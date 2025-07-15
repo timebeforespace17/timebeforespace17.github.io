@@ -10,7 +10,9 @@
 
   <header class="topbar">
   <a href="about.html" class="topbar-title">About Me</a>
-  <nav class="nav">
+ <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+  <nav class="nav" id="mobileNav">
 	<a href="index.html">Home</a>
     <a href="publications.html">Research and Publications</a>
     <a href="notes.html">Notes</a>
@@ -93,6 +95,12 @@
     const scale = 1 +Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
     bg.style.transform = `scale(${scale})`;
   });
+</script>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("mobileNav");
+    nav.classList.toggle("show");
+  }
 </script>
 
 </body>

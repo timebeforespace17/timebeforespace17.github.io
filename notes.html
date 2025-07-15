@@ -11,7 +11,9 @@
 
 <header class="topbar">
   <a href="about.html" class="topbar-title">Madhur Mehta</a>
-  <nav class="nav">
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+  <nav class="nav" id="mobileNav">
 <a href="about.html">About Me</a>
     <a href="publications.html">Research and Publications</a>
     <a href="blog.html">Blog</a>
@@ -68,6 +70,11 @@
     bg.style.transform = `scale(${scale})`;
   });
 </script>
-
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("mobileNav");
+    nav.classList.toggle("show");
+  }
+</script>
 </body>
 </html>

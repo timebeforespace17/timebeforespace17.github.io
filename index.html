@@ -11,7 +11,9 @@
 
 <header class="topbar">
   <a href="about.html" class="topbar-title">Madhur Mehta</a>
-  <nav class="nav">
+ <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+  <nav class="nav" id="mobileNav">
     <a href="publications.html">Research and Publications</a>
     <a href="notes.html">Notes</a>
     <a href="blog.html">Blog</a>
@@ -56,7 +58,7 @@
   feather.replace();
 </script>
 
-<!-- ✅ Zoom-out scroll effect -->
+<!-- Zoom-out scroll effect -->
 <script>
   const bg = document.querySelector('.hero-bg');
   window.addEventListener('scroll', () => {
@@ -65,6 +67,12 @@
     bg.style.transform = `scale(${scale})`;
   });
 </script>
-
+<!--- Mobile Friendly--->
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("mobileNav");
+    nav.classList.toggle("show");
+  }
+</script>
 </body>
 </html>
