@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
 
 * {
@@ -10,7 +11,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: white; /* dark background to avoid white flashes behind hero */
+  background: white;
   font-family: Georgia, serif;
   font-size: 18px;
   line-height: 1.6;
@@ -18,103 +19,67 @@ html, body {
   width: 100%;
 }
 
-.hero {
+/* Hero Sections */
+.hero, .hero2, .hero3, .hero4, .hero5 {
   position: relative;
   height: 100vh;
-  background: url('blog.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   padding: 0;
-  margin-top: -20px; /* pull hero up to top */
+  margin-top: -20px;
   z-index: 0;
+  overflow: hidden;
 }
-.hero2 {
+
+.hero { background: url('blog.jpg') no-repeat center center/cover; }
+.hero2 { background: url('about.jpg') no-repeat center center/cover; }
+.hero3 { background: url('research.jpg') no-repeat center center/cover; }
+.hero4 { background: url('blog2.jpg') no-repeat center center/cover; }
+.hero5 { background: url('notes.jpg') no-repeat center center/cover; }
+
+.hero .overlay, .hero2 .overlay, .hero3 .overlay, .hero4 .overlay, .hero5 .overlay {
   position: relative;
-  height: 100vh;
-  background: url('about.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  padding: 0;
-  margin-top: -20px; /* pull hero up to top */
-  z-index: 0;
-}
-.hero3 {
-  position: relative;
-  height: 100vh;
-  background: url('research.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  padding: 0;
-  margin-top: -20px; /* pull hero up to top */
-  z-index: 0;
-}
-.hero4 {
-  position: relative;
-  height: 100vh;
-  background: url('blog2.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  padding: 0;
-  margin-top: -20px; /* pull hero up to top */
-  z-index: 0;
-}
-.hero5 {
-  position: relative;
-  height: 100vh;
-  background: url('.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  padding: 0;
-  margin-top: -20px; /* pull hero up to top */
-  z-index: 0;
-}
-.hero.overlay,.hero2.overlay,.hero3.overlay,.hero4.overlay {
-  position: relative;
-  z-index: 2;
+  z-index: 1;
   text-align: center;
   color: white;
   padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
 }
 
-.hero::after,.hero2::after,.hero3::after,.hero4::after {
+.hero::after, .hero2::after, .hero3::after, .hero4::after {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0); /* optional dark overlay */
+  background-color: rgba(0, 0, 0, 0);
   z-index: 1;
 }
 
+/* Topbar */
 .topbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* slightly taller for visibility */
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-
-  background: rgba(40, 40, 40, 0.3); /* semi-transparent */
+  background: rgba(40, 40, 40, 0.3);
   backdrop-filter: blur(10px) saturate(150%);
-  -webkit-backdrop-filter: blur(10px) saturate(150%);
-
   color: white;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   z-index: 1000;
-border-radius: 12px;
+  border-radius: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .topbar-title {
-font-size: 1.5rem;
+  font-size: 1.5rem;
   text-decoration: none;
   color: white;
   font-family: 'Inter', sans-serif;
@@ -137,12 +102,14 @@ font-size: 1.5rem;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.8rem;
+  margin: 0 1rem;
 }
 
 .nav a:hover {
   color: #ccc;
 }
 
+/* Main Layout */
 main {
   width: 100%;
   max-width: 960px;
@@ -152,18 +119,7 @@ main {
   word-wrap: break-word;
 }
 
-header, footer {
-  text-align: center;
-  padding: 2rem 0;
-}
-
-nav a {
-  margin: 0 1rem;
-  color: #555;
-  text-decoration: none;
-}
-
-
+/* Footer */
 footer {
   background: #1a1a1a;
   color: white;
@@ -200,8 +156,199 @@ footer {
   height: 24px;
   margin-bottom: 4px;
 }
-/* Zoom-out scrolling hero background */
 
+.blog-grid, .research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  row-gap: -1rem; /* or 0.5rem for tighter spacing */
+  column-gap: 2rem; /* keep horizontal spacing wider if desired */
+  padding: 1rem;
+}
+
+
+.blog-card,
+.research-card {
+  background: #f7f7f7;
+  padding: 2rem 2.5rem;  /* increased horizontal padding */
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  margin: 2rem auto;  /* center the card itself horizontally with vertical spacing */
+}
+
+.blog-card.expanded,
+.research-card.expanded {
+  position: fixed;
+  top: 5%;
+  left: 7.5%;
+  right: 7.5%;
+  width: 85%;
+  height: 90%;
+  overflow-y: auto;
+  backgroundcolor: white; /* optional: adjust text color for contrast */
+  z-index: 1001;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.blog-snippet, .research-snippet {
+  font-size: 1rem;
+  color: #444;
+}
+
+.blog-full-content, .research-full-content {
+  display: none;
+}
+
+.blog-card.expanded .blog-snippet,
+.research-card.expanded .research-snippet {
+  display: none;
+}
+
+.blog-card.expanded .blog-full-content,
+.research-card.expanded .research-full-content {
+  display: block;
+  margin-top: 2rem;
+}
+
+#blog-overlay, #research-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+
+/* Typography for Cards */
+.blog-title, .research-title {
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Pub Card Style */
+.pub-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-left: 5px solid #ccc;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+.pub-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.pub-card p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.pub-card ol {
+  padding-left: 1.2rem;
+}
+
+.pub-card li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .topbar-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav a {
+    font-size: 1rem;
+    color: white;
+    margin: 0.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+  }
+
+  .hero, .hero2, .hero3, .hero4, .hero5 {
+    height: 60vh;
+    background-attachment: scroll;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .blog-card.expanded, .research-card.expanded {
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    width: 80%;
+    height: 80%;
+  }
+
+  .pub-card {
+    padding: 1rem;
+  }
+
+  .blog-title, .research-title {
+    font-size: 1.3rem;
+  }
+}
 .hero {
   position: relative;
   height: 100vh;
@@ -334,301 +481,4 @@ footer {
   text-align: center;
   color: white;
   padding: 2rem;
-}
-.blog-post {
-background-color: #f8f8f8;  /* Box background */
-  color: ;             /* Text inside blog box */
-  background: ;
-  padding: 2rem;
-  margin: 2rem auto;
-  border-radius: 8px;
-  max-width: 800px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  line-height: 1.7;
-  font-family: Georgia, serif;
-}
-
-.blog-meta {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-  text-align: right;
-}
-
-.blog-date {
-  font-style: italic;
-}
-
-.blog-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.highlighted-step {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
-.takeaway-heading {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 2rem;
-}
-
-.blog-closing {
-  margin-top: 2rem;
-  font-style: italic;
-  text-align: center;
-}
-.blog-card {
-  background: #0038A8; /* Light blue/gray outer background */
-  padding: 2rem;
-  margin: 2rem auto;
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
-.pub-card {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-left: 5px solid #ccc;
-  padding: 1.5rem;
-  margin: 2rem 0;
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
-}
-
-.pub-card h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.pub-card p {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-.pub-card ol {
-  padding-left: 1.2rem;
-}
-
-.pub-card li {
-  margin-bottom: 0.6rem;
-  line-height: 1.5;
-}
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.blog-card {
-  background: #f7f7f7;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.3s ease;
-  overflow: hidden;
-}
-
-.blog-card.expanded {
-  position: fixed;
-  top: 10%;
-  left: 10%;
-	right: 10%;
-  width: 80%;
-  height: 80%;
-  overflow-y: auto;
-  background: white;
-  z-index: 1001;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-}
-
-.blog-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.blog-snippet {
-  font-size: 1rem;
-  color: #444;
-}
-
-.blog-full-content {
-  display: none;
-}
-
-.blog-card.expanded .blog-snippet {
-  display: none;
-}
-
-.blog-card.expanded .blog-full-content {
-  display: block;
-  margin-top: 1rem;
-}
-
-#blog-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.6);
-  z-index: 1000;
-}
-/* === MOBILE RESPONSIVENESS === */
-@media (max-width: 768px) {
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 1rem;
-  }
-
-  .topbar-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-  }
-
-  .nav a {
-    font-size: 1rem;
-    padding: 0.5rem 0;
-    display: block;
-  }
-
-  .hero, .hero2, .hero3, .hero4, .hero5 {
-    height: 60vh;
-    background-attachment: scroll;
-  }
-
-  main {
-    padding: 1rem;
-  }
-
-  .blog-grid {
-    grid-template-columns: 1fr; /* stack blog cards */
-  }
-
-  .blog-card {
-    padding: 1rem;
-  }
-
-  .blog-card.expanded {
-    top: 5%;
-    left: 5%;
-    right: 5%;
-    width: 90%;
-    height: 90%;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .pub-card {
-    padding: 1rem;
-  }
-
-  .blog-title {
-    font-size: 1.3rem;
-  }
-}
-/* Hide hamburger on desktop */
-.hamburger {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav {
-    display: none;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0;
-    z-index: 1000;
-  }
-
-  .nav.show {
-    display: flex;
-  }
-
-  .nav a {
-    color: white;
-    margin: 1rem 0;
-    font-size: 1rem;
-  }
-}
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-/* Position it on the right side of the topbar */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    position: absolute;
-    right: 1.5rem;
-    top: 1rem;
-  }
-
-  .nav {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    background: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    padding: 1rem;
-    z-index: 1000;
-  }
-
-  .nav.show {
-    display: flex;
-  }
-
-  .nav a {
-    margin: 0.5rem 0;
-    color: white;
-    font-size: 1rem;
-  }
 }
