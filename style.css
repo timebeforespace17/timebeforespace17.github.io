@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: white; /* dark background to avoid white flashes behind hero */
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: black;
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('blog.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  margin-top: -20px; /* pull hero up to top */
+  z-index: 0;
+}
+.hero2 {
+  position: relative;
+  height: 100vh;
+  background: url('about.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  margin-top: -20px; /* pull hero up to top */
+  z-index: 0;
+}
+.hero3 {
+  position: relative;
+  height: 100vh;
+  background: url('research.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  margin-top: -20px; /* pull hero up to top */
+  z-index: 0;
+}
+.hero4 {
+  position: relative;
+  height: 100vh;
+  background: url('blog2.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  margin-top: -20px; /* pull hero up to top */
+  z-index: 0;
+}
+.hero5 {
+  position: relative;
+  height: 100vh;
+  background: url('.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  margin-top: -20px; /* pull hero up to top */
+  z-index: 0;
+}
+.hero.overlay,.hero2.overlay,.hero3.overlay,.hero4.overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.hero::after,.hero2::after,.hero3::after,.hero4::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0); /* optional dark overlay */
+  z-index: 1;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: rgba(26, 26, 26, 0.8);
+  color: white;
+  align-items: center;
+  justify-content: flex-start; /* <— this aligns content to the left */
+  font-family: 'Inter', sans-serif;
+  z-index: 1000;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
+  padding-left: 1rem; /* adds some breathing room on the left */
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.topbar-title {
+font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.topbar-title:hover {
+  color: #ccc;
+}
+
+.nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  padding-right: 0.5rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.nav a:hover {
+  color: #ccc;
+}
+
+main {
+  width: 100%;
+  max-width: 960px;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+header, footer {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: #555;
+  text-decoration: none;
+}
+
+
+footer {
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+}
+
+.footer-links i {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+/* Zoom-out scrolling hero background */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -40px; /* pulls hero under fixed topbar */
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('blog.jpg') no-repeat center center/cover;
+  background-size: cover;
+  transform: scale(1);
+  transition: transform 0.1s ease-out;
+  z-index: 0;
+}
+
+.hero .overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.hero2 {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -40px;
+}
+
+.hero2-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('about.jpg') no-repeat center center/cover;
+  background-size: cover;
+  transition: transform 0.1s ease-out;
+  z-index: 0;
+}
+
+.hero2 .overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 3rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+}
+.hero3 {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -40px;
+}
+
+.hero3-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('research.jpg') no-repeat center center/cover;
+  background-size: cover;
+  transition: transform 0.1s ease-out;
+  z-index: 0;
+}
+
+.hero3 .overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 3rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+}
+.hero4 {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -40px; /* pulls hero under fixed topbar */
+}
+
+.hero4-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('blog2.jpg') no-repeat center center/cover;
+  background-size: cover;
+  transform: scale(1);
+  transition: transform 0.1s ease-out;
+  z-index: 0;
+}
+
+.hero4 .overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+.hero5 {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -40px; /* pulls hero under fixed topbar */
+}
+
+.hero5-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('notes.jpg') no-repeat center center/cover;
+  background-size: cover;
+  transform: scale(1);
+  transition: transform 0.1s ease-out;
+  z-index: 0;
+}
+
+.hero5 .overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}

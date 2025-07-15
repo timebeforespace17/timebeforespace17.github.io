@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madhur Mehta – Theoretical Physicist</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="about.html" class="topbar-title">Madhur Mehta</a>
+  <nav class="nav">
+    <a href="publications.html">Research and Publications</a>
+    <a href="notes.html">Notes</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="overlay">
+  </div>
+</section>
+
+<main>
+  <h2>Welcome</h2>
+  <p>Welcome to my academic and personal website. Explore my work on black holes, quantum gravity, and more.</p>
+</main>
+
+<footer>
+  <p class="footer-links">
+    <a href="mailto:madhur@email.com">
+      <i data-feather="mail"></i>
+      <span>Email</span>
+    </a>
+    <a href="https://physics.osu.edu/people/mehta.135">
+      <i data-feather="book-open"></i>
+      <span>OSU Profile</span>
+    </a>
+    <a href="https://www.linkedin.com/in/madhurmehta">
+      <i data-feather="linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+    <a href="https://www.youtube.com/@TimeBeforeSpace">
+      <i data-feather="youtube"></i>
+      <span>YouTube</span>
+    </a>
+  </p>
+  <p>© 2025 Madhur Mehta</p>
+</footer>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
+
+<!-- ✅ Zoom-out scroll effect -->
+<script>
+  const bg = document.querySelector('.hero-bg');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const scale = 1 +Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
+    bg.style.transform = `scale(${scale})`;
+  });
+</script>
+
+</body>
+</html>

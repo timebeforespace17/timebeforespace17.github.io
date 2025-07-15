@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications – Madhur Mehta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="topbar">
+  <a href="about.html" class="topbar-title">Research and Publications</a>
+  <nav class="nav">
+	<a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="notes.html">Notes</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+</header>
+
+<section class="hero3">
+ <div class="hero3-bg"></div>
+  <div class="overlay">
+  </div>
+</section>
+
+  <main>
+    <h2>Recent Publications</h2>
+    <ul>
+      <li><strong>Feb 2024</strong> – The Universal Thermodynamic Properties of Extremely Compact Objects</li>
+      <li><strong>Dec 2023</strong> – Electromagnetic Entrapment in Gravity</li>
+      <li><strong>Oct 2023</strong> – Lifting of Superconformal Descendants in the D1-D5 CFT</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p class="footer-links">
+      <a href="mailto:madhur@email.com">
+        <i data-feather="mail"></i>
+        <span>Email</span>
+      </a>
+      <a href="https://physics.osu.edu/people/mehta.135">
+        <i data-feather="book-open"></i>
+        <span>OSU Profile</span>
+      </a>
+      <a href="https://www.linkedin.com/in/madhurmehta">
+        <i data-feather="linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://www.youtube.com/@TimeBeforeSpace">
+        <i data-feather="youtube"></i>
+        <span>YouTube</span>
+      </a>
+    </p>
+    <p>© 2025 Madhur Mehta</p>
+  </footer>
+
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    feather.replace();
+  </script>
+
+<script>
+  const bg = document.querySelector('.hero3-bg');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const scale = 1 +Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
+    bg.style.transform = `scale(${scale})`;
+  });
+</script>
+
+</body>
+
+</html>
