@@ -30,7 +30,8 @@
 </section>
 
 <main>
-  <h2>Welcome</h2>
+   <!-- Dynamic greeting: changes every few seconds -->
+    <h2 id="greeting">Welcome</h2> <!-- id used to target this element with JS -->
   <p>I am a Heising-Simons Postdoctoral Fellow at the University of California, Santa Barbara. My research focuses on the quantum nature of black holes, the information paradox, and extremely compact objects, with an emphasis on connecting high-energy theory to astrophysical observations and identifying observable signatures of quantum gravitational effects near black holes.</p>
 </main>
 
@@ -77,5 +78,32 @@
     nav.classList.toggle("show");
   }
 </script>
+  <script>
+  // Array of greetings to cycle through
+  const greetings = ["Hi", "Hello", "Namaste", "Konnichiwa", "Hola", "Bonjour", "Salam"];
+
+  // Select the element to update
+  const greetingElement = document.getElementById("greeting");
+
+  // Initialize index for cycling
+  let index = 0;
+
+  // Function to update the greeting
+  function updateGreeting() {
+    greetingElement.style.opacity = 0; // fade out by reducing opacity
+    setTimeout(() => {
+      greetingElement.textContent = greetings[index]; // change text
+      greetingElement.style.opacity = 1; // fade in
+      index = (index + 1) % greetings.length; // loop back after last greeting
+    }, 500); // matches CSS transition duration
+  }
+
+  // Initial greeting
+  updateGreeting();
+
+  // Change greeting every 3 seconds (3000ms)
+  setInterval(updateGreeting, 3000);
+</script>
+
 </body>
 </html>
