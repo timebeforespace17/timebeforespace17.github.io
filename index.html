@@ -81,60 +81,57 @@
   <script>
   // Array of greetings to cycle through
   const greetings = [
-  "Hi",            // English
-  "Hello",         // English
-  "Hey",           // English
-  "Namaste",       // Hindi (Latin)
-  "नमस्ते",         // Hindi (Devanagari)
-  "Konnichiwa",    // Japanese (Romaji)
-  "こんにちは",       // Japanese (Hiragana)
-  "Hola",          // Spanish
-  "Bonjour",       // French
-  "Salut",         // French casual
-  "Ciao",          // Italian
-  "Hallo",         // German
-  "Guten Tag",     // German formal
-  "Salam",         // Arabic (Latin)
-  "سلام",          // Arabic (Arabic script)
-  "Shalom",        // Hebrew (Latin)
-  "שָׁלוֹם",        // Hebrew (Hebrew script)
-  "안녕하세요",        // Korean
-  "你好",           // Chinese (Mandarin)
-  "Привет",        // Russian
-  "Здравствуйте",   // Russian formal
-  "Γειά σου",       // Greek
-  "Hej",           // Swedish/Danish
-  "Merhaba",       // Turkish
-  "Sawubona",      // Zulu
-  "Selamat pagi",  // Malay / Indonesian
-  "Sawasdee",      // Thai (Romanized)
-  "สวัสดี",        // Thai
-  "Xin chào",      // Vietnamese
-  "Ahoj"           // Czech
+  "Hi!",            // English
+  "Hello!",         // English
+  "Hey!",           // English
+  "Namaste!",       // Hindi (Latin)
+  "नमस्ते!",         // Hindi (Devanagari)
+  "Konnichiwa!",    // Japanese (Romaji)
+  "こんにちは!",       // Japanese (Hiragana)
+  "Hola!",          // Spanish
+  "Bonjour!",       // French
+  "Salut!",         // French casual
+  "Ciao!",          // Italian
+  "Hallo!",         // German
+  "Guten Tag!",     // German formal
+  "Salam!",         // Arabic (Latin)
+  "سلام!",          // Arabic (Arabic script)
+  "Shalom!",        // Hebrew (Latin)
+  "שָׁלוֹם!",        // Hebrew (Hebrew script)
+  "안녕하세요!",        // Korean
+  "你好!",           // Chinese (Mandarin)
+  "Привет!",        // Russian
+  "Здравствуйте!",   // Russian formal
+  "Γειά σου!",       // Greek
+  "Hej!",           // Swedish/Danish
+  "Merhaba!",       // Turkish
+  "Sawubona!",      // Zulu
+  "Selamat pagi!",  // Malay / Indonesian
+  "Sawasdee!",      // Thai (Romanized)
+  "สวัสดี!",        // Thai
+  "Xin chào!",      // Vietnamese
+  "Ahoj!"           // Czech
 ];
 
 
-  // Select the element to update
+// Select the element to update
   const greetingElement = document.getElementById("greeting");
 
-  // Initialize index for cycling
-  let index = 0;
-
-  // Function to update the greeting
+  // Function to pick a random greeting
   function updateGreeting() {
-    greetingElement.style.opacity = 0; // fade out by reducing opacity
+    const randomIndex = Math.floor(Math.random() * greetings.length); // random index
+    const greeting = greetings[randomIndex];
+
+    // Optional fade effect
+    greetingElement.style.opacity = 0; // fade out
     setTimeout(() => {
-      greetingElement.textContent = greetings[index]; // change text
+      greetingElement.textContent = greeting; // update text
       greetingElement.style.opacity = 1; // fade in
-      index = (index + 1) % greetings.length; // loop back after last greeting
-    }, 500); // matches CSS transition duration
+    }, 500); // match CSS transition
   }
 
-  // Initial greeting
-  updateGreeting();
-
-  // Change greeting every 3 seconds (3000ms)
-  setInterval(updateGreeting, 3000);
+  updateGreeting(); // initial greeting
+  setInterval(updateGreeting, 3000); // change every 3 seconds randomly
 </script>
 
 </body>
