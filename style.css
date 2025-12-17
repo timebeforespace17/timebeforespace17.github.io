@@ -8,9 +8,9 @@
   box-sizing: border-box;
 }
 #greeting {
-  transition: opacity 0.5s ease-in-out;
-  color: white;
-  font-size: 2rem;
+  transition: opacity 0.5s ease-in-out; /* smooth fade in/out */
+  color: white;                         /* visible on hero image */
+  font-size: 2rem;                       /* matches hero overlay */
   text-align: center;
   margin: 0.5rem 0;
 }
