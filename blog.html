@@ -214,7 +214,7 @@ science is a part of history."</em></p>
   const bg = document.querySelector('.hero4-bg');
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const scale = 1 + Math.min(scrollY / 1000, 0.3);
+    const scale = 1 + Math.min(scrollY / 1000, 0);
     bg.style.transform = `scale(${scale})`;
   });
 </script>
