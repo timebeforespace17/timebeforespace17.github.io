@@ -80,59 +80,6 @@ html, body {
   background: rgba(0, 0, 0, 0.4); /* Optional: semi-transparent background for contrast */
 }
 
-/* Vertical divider sidebar */
-.sidebar-divider {
-  position: fixed;           /* stays in place on scroll */
-  top: 0;
-  bottom: 0;
-  width: 300px;              /* width of the divider */
-  right: 0;                  /* stick to the right edge */
-  transform: translateX(0);  /* can animate in/out if needed */
-  border-left: 2px solid rgba(255,255,255,0.3); /* vertical line */
-  background: rgba(20, 20, 20, 0.8); /* semi-transparent background */
-  z-index: 500;              /* above content but below nav/topbar */
-  padding: 2rem 1rem;
-  overflow-y: auto;          /* scroll if content is long */
-  display: flex;
-  flex-direction: column;
-}
-
-/* Inner content of sidebar */
-.sidebar-divider .sidebar-content {
-  color: white;
-  font-family: 'Inter', sans-serif;
-}
-
-.sidebar-divider h3 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.sidebar-divider ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar-divider li {
-  margin-bottom: 1.5rem;
-}
-
-.sidebar-divider li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.sidebar-divider li a:hover {
-  color: #ccc;
-}
-
-.sidebar-divider li p {
-  font-size: 0.9rem;
-  color: #ddd;
-  margin-top: 0.2rem;
-}
-
 
 /* Top Navigation Bar */
 .topbar {
