@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Sets the character encoding for the document -->
   <meta charset="UTF-8">
-  <!-- Ensures proper scaling on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Title of the webpage shown in the browser tab -->
   <title>Madhur Mehta – Theoretical Physicist</title>
-  <!-- Link to external CSS stylesheet -->
   <link rel="stylesheet" href="style.css">
-  <!-- Feather icons library for vector icons -->
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
 
-<!-- Header section with navigation -->
 <header class="topbar">
-  <!-- Site title linking to About page -->
   <a href="about.html" class="topbar-title">Madhur Mehta</a>
-  <!-- Hamburger button for mobile navigation toggle -->
-  <button class="hamburger" onclick="toggleMenu()">☰</button>
+ <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-  <!-- Navigation menu -->
   <nav class="nav" id="mobileNav">
     <a href="publications.html">Research and Publications</a>
     <a href="notes.html">Notes</a>
@@ -29,74 +20,17 @@
   </nav>
 </header>
 
-<!-- Hero section with background and overlay -->
 <section class="hero">
-  <!-- Background div for image or color -->
   <div class="hero-bg"></div>
-  <!-- Overlay div for text or visual effects -->
   <div class="overlay">
-    <h1>Exploring Black Holes, Quantum Gravity, and the Edge of Information</h1>
-    <p>Physics postdoc, sketcher, musician, runner, and anime enthusiast</p>
-    <a href="#mainContent" class="scroll-down">↓ Explore</a>
   </div>
 </section>
 
-<!-- Main content area -->
-<main id="mainContent">
-  <!-- Welcome section -->
-  <section class="welcome">
-    <h2>Welcome</h2>
-    <p>Welcome to my academic and personal website. Explore my work on black holes, quantum gravity, gravitational waves, and the information paradox, as well as my personal interests in sketching, music, and anime.</p>
-  </section>
-
-  <!-- Research highlights section -->
-  <section class="research">
-    <h2>Research Highlights</h2>
-    <ul>
-      <li><strong>Black Holes:</strong> Dynamics, thermodynamics, and information paradox studies.</li>
-      <li><strong>Quantum Gravity:</strong> Approaches including loop quantum gravity and holography.</li>
-      <li><strong>Gravitational Waves:</strong> Modeling and data analysis of astrophysical sources.</li>
-    </ul>
-    <a href="publications.html">View Full Publications & Projects →</a>
-  </section>
-
-  <!-- Notes section -->
-  <section class="notes">
-    <h2>My Notes</h2>
-    <p>Detailed lecture notes, derivations, and explanations of advanced physics topics.</p>
-    <ul>
-      <li><a href="notes.html#blackholes">Black Holes</a></li>
-      <li><a href="notes.html#quantumgravity">Quantum Gravity</a></li>
-      <li><a href="notes.html#gravitationalwaves">Gravitational Waves</a></li>
-    </ul>
-  </section>
-
-  <!-- Blog highlights section -->
-  <section class="blog">
-    <h2>Recent Blog Posts</h2>
-    <ul>
-      <li><a href="blog.html#post1">Reflections on the Black Hole Information Paradox</a></li>
-      <li><a href="blog.html#post2">Sketching Spacetime: Visualizing GR</a></li>
-      <li><a href="blog.html#post3">Music and Physics: What I’m Listening to While Thinking</a></li>
-    </ul>
-    <a href="blog.html">Read All Blog Posts →</a>
-  </section>
-
-  <!-- Personal hobbies / interests section -->
-  <section class="hobbies">
-    <h2>Beyond Physics</h2>
-    <p>When I’m not doing research, I enjoy:</p>
-    <ul>
-      <li>Sketching & Drawing</li>
-      <li>Singing & Listening to Music</li>
-      <li>Running & Boxing</li>
-      <li>Watching Movies & Anime</li>
-    </ul>
-    <a href="about.html#personal">Learn More About Me →</a>
-  </section>
+<main>
+  <h2>Welcome</h2>
+  <p>Welcome to my academic and personal website. Explore my work on black holes, quantum gravity, and more.</p>
 </main>
 
-<!-- Footer section with contact info and links -->
 <footer>
   <p class="footer-links">
     <a href="mailto:madhur.time17@gmail.com">
@@ -119,26 +53,25 @@
   <p>© 2025 Madhur Mehta</p>
 </footer>
 
-<!-- Feather icons activation script -->
+<script src="https://unpkg.com/feather-icons"></script>
 <script>
-  feather.replace(); // Replaces <i> tags with feather icons
+  feather.replace();
 </script>
 
-<!-- Zoom-out scroll effect for hero background -->
+<!-- Zoom-out scroll effect -->
 <script>
   const bg = document.querySelector('.hero-bg');
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const scale = 1 + Math.min(scrollY / 1000, 0); // Prevents over-scaling
+    const scale = 1 +Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
     bg.style.transform = `scale(${scale})`;
   });
 </script>
-
-<!-- Mobile navigation toggle -->
+<!--- Mobile Friendly--->
 <script>
   function toggleMenu() {
     const nav = document.getElementById("mobileNav");
-    nav.classList.toggle("show"); // Shows or hides mobile menu
+    nav.classList.toggle("show");
   }
 </script>
 </body>
