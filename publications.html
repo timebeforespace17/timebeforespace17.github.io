@@ -140,7 +140,7 @@ Redefining Entanglement Entropy</em> — <a href="https://arxiv.org/abs/2204.001
   const bg = document.querySelector('.hero3-bg');
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const scale = 1 +Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
+    const scale = 1 +Math.min(scrollY / 1000, 0); // Zoom out up to 1.3x
     bg.style.transform = `scale(${scale})`;
   });
 
