@@ -42,7 +42,7 @@ html, body {
 }
 
 /* Individual hero background images */
-.hero { background: url('blog.jpg') no-repeat center center/cover; }
+.hero { background: url('blog.png') no-repeat center center/cover; }
 .hero2 { background: url('about.jpg') no-repeat center center/cover; }
 .hero3 { background: url('research.jpg') no-repeat center center/cover; }
 .hero4 { background: url('blog2.jpg') no-repeat center center/cover; }
