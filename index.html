@@ -116,21 +116,27 @@
 
 const greetingElement = document.getElementById("greeting");
 
-  // Function to pick a random greeting
   function updateGreeting() {
-    const randomIndex = Math.floor(Math.random() * greetings.length); // random index
+    // Pick a random greeting
+    const randomIndex = Math.floor(Math.random() * greetings.length);
     const greeting = greetings[randomIndex];
 
-    // Optional fade effect
-    greetingElement.style.opacity = 0; // fade out
+    // Fade out first
+    greetingElement.style.transition = "opacity 0.5s ease-in-out";
+    greetingElement.style.opacity = 0;
+
+    // Wait for fade-out to finish before changing text
     setTimeout(() => {
-      greetingElement.textContent = greeting; // update text
+      greetingElement.textContent = greeting;
       greetingElement.style.opacity = 1; // fade in
-    }, 500); // match CSS transition
+    }, 500); // 500ms matches the CSS transition duration
   }
 
-  updateGreeting(); // initial greeting
-  setInterval(updateGreeting, 3000); // change every 3 seconds randomly
+  // Initial greeting
+  updateGreeting();
+
+  // Change greeting every 3 seconds randomly
+  setInterval(updateGreeting, 3000);
 </script>
   
 </body>
