@@ -60,7 +60,13 @@ html, body {
   background-color: rgba(0, 0, 0, 0); /* Transparent by default */
   z-index: 1;                 /* Place above hero background but below content if needed */
 }
-
+.hero-quote {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
 /* Top Navigation Bar */
 .topbar {
   position: fixed;            /* Stick to top */
