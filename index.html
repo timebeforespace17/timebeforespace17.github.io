@@ -46,7 +46,7 @@
 <main>
    <!-- Dynamic greeting: changes every few seconds -->
     <h2 id="greeting">Welcome</h2> <!-- id used to target this element with JS -->
-  <p>I am a Heising-Simons Postdoctoral Fellow at the University of California, Santa Barbara. My research focuses on the quantum nature of black holes, the information paradox, and extremely compact objects, with an emphasis on connecting high-energy theory to astrophysical observations and identifying observable signatures of quantum gravitational effects near black holes.</p>
+  <p>I’m Madhur Mehta, a Heising-Simons Postdoctoral Fellow at UCSB, originally from Jaipur, India. I study black holes, horizonless compact objects, and the quantum nature of spacetime, and gravitational waves, connecting theory with observations to explore how quantum gravity might leave detectable signals in the cosmos. My work addresses the black hole information paradox and the thermodynamics of extremely compact objects (ECOs). Beyond physics, I enjoy sketching, painting, cooking, solving puzzles, playing chess, running, boxing, listening to music, and watching movies and anime, and I share my passion for science through mentoring and my YouTube channel, Time Before Space.</p>
 </main>
 
 <footer>
@@ -131,16 +131,19 @@
 // Select the element to update
   const greetingElement = document.getElementById("greeting");
 
- function updateGreeting() {
-  const randomIndex = Math.floor(Math.random() * greetings.length);
-  const greeting = greetings[randomIndex];
+  // Function to pick a random greeting
+  function updateGreeting() {
+    const randomIndex = Math.floor(Math.random() * greetings.length); // random index
+    const greeting = greetings[randomIndex];
 
-  greetingElement.style.opacity = 0; // fade out
-  setTimeout(() => {
-    greetingElement.textContent = greeting; // update text after fade out
-    greetingElement.style.opacity = 1;      // fade in
-  }, 500); // matches transition duration
-}
+    // Optional fade effect
+    greetingElement.style.opacity = 0; // fade out
+    setTimeout(() => {
+      greetingElement.textContent = greeting; // update text
+      greetingElement.style.opacity = 1; // fade in
+    }, 500); // match CSS transition
+  }
+
   updateGreeting(); // initial greeting
   setInterval(updateGreeting, 3000); // change every 3 seconds randomly
 </script>
