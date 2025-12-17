@@ -9,106 +9,46 @@
 </head>
 <body>
 
-<!-- Top Navigation -->
 <header class="topbar">
-  <a href="#about" class="topbar-title">Madhur Mehta</a>
-  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <a href="about.html" class="topbar-title">Madhur Mehta</a>
+ <button class="hamburger" onclick="toggleMenu()">☰</button>
+
   <nav class="nav" id="mobileNav">
-    <a href="#research">Research and Publications</a>
-    <a href="#notes">Notes</a>
-    <a href="#blog">Blog</a>
+    <a href="publications.html">Research and Publications</a>
+    <a href="notes.html">Notes</a>
+    <a href="blog.html">Blog</a>
   </nav>
 </header>
 
-<!-- Hero Section -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="overlay">
-    <h1>Exploring the Frontiers of Physics</h1>
-    <p>Black holes, quantum gravity, and beyond</p>
-    <a href="#research" class="cta-button">View Research</a>
   </div>
 </section>
 
 <main>
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a theoretical physicist at Ohio State University, working on black holes, quantum gravity, and fundamental questions in physics. My goal is to make complex topics accessible and share insights from my research.</p>
-    <a href="about.html">Learn More About Me</a>
-  </section>
-
-  <!-- Featured Research -->
-  <section id="research">
-    <h2>Featured Research</h2>
-    <div class="articles-grid">
-      <article class="article-card">
-        <img src="research1.jpg" alt="Research 1">
-        <h3>Quantum Gravity Insights</h3>
-        <p>Exploring the quantum structure of spacetime and its implications.</p>
-        <a href="publications.html">Read More</a>
-      </article>
-
-      <article class="article-card">
-        <img src="research2.jpg" alt="Research 2">
-        <h3>Black Hole Dynamics</h3>
-        <p>Investigating the behavior of black holes and event horizons.</p>
-        <a href="publications.html">Read More</a>
-      </article>
-
-      <article class="article-card">
-        <img src="research3.jpg" alt="Research 3">
-        <h3>Early Universe Studies</h3>
-        <p>Insights into the first moments after the Big Bang.</p>
-        <a href="publications.html">Read More</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- Notes Section -->
-  <section id="notes">
-    <h2>Notes & Resources</h2>
-    <div class="articles-grid">
-      <article class="article-card">
-        <h3>General Relativity Notes</h3>
-        <p>Lecture notes and summaries on Einstein's theory.</p>
-        <a href="notes.html">Download PDF</a>
-      </article>
-
-      <article class="article-card">
-        <h3>Quantum Mechanics Notes</h3>
-        <p>Detailed notes for students studying quantum physics.</p>
-        <a href="notes.html">Download PDF</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- Blog Section -->
-  <section id="blog">
-    <h2>Blog & Updates</h2>
-    <div class="articles-grid">
-      <article class="article-card">
-        <h3>Recent Research Highlights</h3>
-        <p>Summary of my latest paper and key findings.</p>
-        <a href="blog.html">Read More</a>
-      </article>
-
-      <article class="article-card">
-        <h3>Physics Outreach & Education</h3>
-        <p>Sharing insights for students and enthusiasts.</p>
-        <a href="blog.html">Read More</a>
-      </article>
-    </div>
-  </section>
+  <h2>Welcome</h2>
+  <p>Welcome to my academic and personal website. Explore my work on black holes, quantum gravity, and more.</p>
 </main>
 
-<!-- Footer -->
 <footer>
   <p class="footer-links">
-    <a href="mailto:madhur.time17@gmail.com"><i data-feather="mail"></i>Email</a>
-    <a href="https://physics.osu.edu/people/mehta.493"><i data-feather="book-open"></i>OSU Profile</a>
-    <a href="https://www.linkedin.com/in/madhur-mehta-a7a400120/"><i data-feather="linkedin"></i>LinkedIn</a>
-    <a href="https://www.youtube.com/@TimeBeforeSpace"><i data-feather="youtube"></i>YouTube</a>
+    <a href="mailto:madhur.time17@gmail.com">
+      <i data-feather="mail"></i>
+      <span>Email</span>
+    </a>
+    <a href="https://physics.osu.edu/people/mehta.493">
+      <i data-feather="book-open"></i>
+      <span>OSU Profile</span>
+    </a>
+    <a href="https://www.linkedin.com/in/madhur-mehta-a7a400120/">
+      <i data-feather="linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+    <a href="https://www.youtube.com/@TimeBeforeSpace">
+      <i data-feather="youtube"></i>
+      <span>YouTube</span>
+    </a>
   </p>
   <p>© 2025 Madhur Mehta</p>
 </footer>
@@ -116,16 +56,19 @@
 <script src="https://unpkg.com/feather-icons"></script>
 <script>
   feather.replace();
+</script>
 
-  // Zoom-out scroll effect
+<!-- Zoom-out scroll effect -->
+<script>
   const bg = document.querySelector('.hero-bg');
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const scale = 1 + Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
+    const scale = 1 +Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
     bg.style.transform = `scale(${scale})`;
   });
-
-  // Mobile menu toggle
+</script>
+<!--- Mobile Friendly--->
+<script>
   function toggleMenu() {
     const nav = document.getElementById("mobileNav");
     nav.classList.toggle("show");
