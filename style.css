@@ -1,488 +1,437 @@
-
+/* Import Google Fonts: Inter for headings, Merriweather for body text */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
 
+/* Reset default margin/padding and set box-sizing to border-box for easier layout control */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base styles for html and body */
 html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: white;
-  font-family: Georgia, serif;
-  font-size: 18px;
-  line-height: 1.6;
-  color: black;
-  width: 100%;
+  margin: 0;                  /* Remove default margin */
+  padding: 0;                 /* Remove default padding */
+  overflow-x: hidden;         /* Prevent horizontal scroll */
+  background: white;          /* Set default background */
+  font-family: Georgia, serif; /* Default font for body text */
+  font-size: 18px;            /* Base font size */
+  line-height: 1.6;           /* Comfortable line height */
+  color: black;               /* Default text color */
+  width: 100%;                /* Ensure body spans full width */
 }
 
-/* Hero Sections */
+/* Hero Sections: common styles for all hero variants */
 .hero, .hero2, .hero3, .hero4, .hero5 {
-  position: relative;
-  height: 100vh;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
+  position: relative;         /* Relative for positioning overlay inside */
+  height: 100vh;              /* Full viewport height */
+  background-attachment: fixed; /* Parallax effect */
+  background-size: cover;     /* Cover entire hero area */
+  background-position: center; /* Center the image */
   padding: 0;
-  margin-top: -20px;
-  z-index: 0;
-  overflow: hidden;
+  margin-top: -20px;          /* Adjust hero position (can be tweaked for fixed nav) */
+  z-index: 0;                 /* Default stacking below overlay */
+  overflow: hidden;           /* Prevent overflow of child elements */
 }
 
+/* Individual hero background images */
 .hero { background: url('blog.jpg') no-repeat center center/cover; }
 .hero2 { background: url('about.jpg') no-repeat center center/cover; }
 .hero3 { background: url('research.jpg') no-repeat center center/cover; }
 .hero4 { background: url('blog2.jpg') no-repeat center center/cover; }
 .hero5 { background: url('notes.jpg') no-repeat center center/cover; }
 
+/* Overlay inside hero sections: for text and content */
 .hero .overlay, .hero2 .overlay, .hero3 .overlay, .hero4 .overlay, .hero5 .overlay {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
+  position: relative;         /* Position relative for stacking content */
+  z-index: 1;                 /* Place above background */
+  text-align: center;         /* Center the text */
+  color: white;               /* Text color */
+  padding: 2rem;              /* Spacing inside overlay */
+  font-family: 'Inter', sans-serif; /* Font for headings/overlay */
+  font-size: 2rem;            /* Large font size for hero text */
 }
 
+/* Pseudo-element for overlay (can be used for shading or effects) */
 .hero::after, .hero2::after, .hero3::after, .hero4::after {
-  content: "";
-  position: absolute;
+  content: "";                /* Empty content for decorative purposes */
+  position: absolute;         /* Absolute positioning covers hero */
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0);
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0); /* Transparent by default */
+  z-index: 1;                 /* Place above hero background but below content if needed */
 }
 
-/* Topbar */
+/* Top Navigation Bar */
 .topbar {
-  position: fixed;
+  position: fixed;            /* Stick to top */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  background: rgba(40, 40, 40, 0.3);
-  backdrop-filter: blur(10px) saturate(150%);
-  color: white;
-  font-family: 'Inter', sans-serif;
+  width: 100%;                /* Full width */
+  height: 60px;               /* Fixed height */
+  display: flex;              /* Flex layout for title and nav */
+  align-items: center;        /* Vertical alignment */
+  justify-content: space-between; /* Space between title and links */
+  padding: 0 2rem;            /* Horizontal padding */
+  background: rgba(40, 40, 40, 0.3); /* Semi-transparent dark background */
+  backdrop-filter: blur(10px) saturate(150%); /* Blur and saturate behind nav */
+  color: white;               /* Text color */
+  font-family: 'Inter', sans-serif; /* Font for nav */
   font-weight: 500;
-  z-index: 1000;
-  border-radius: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;              /* Ensure nav stays on top of other content */
+  border-radius: 12px;        /* Rounded corners */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle bottom border */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
 }
 
+/* Topbar title link */
 .topbar-title {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: white;
+  font-size: 1.5rem;          /* Larger font for site title */
+  text-decoration: none;       /* Remove underline */
+  color: white;                /* White text */
   font-family: 'Inter', sans-serif;
 }
 
+/* Hover effect for topbar title */
 .topbar-title:hover {
-  color: #ccc;
+  color: #ccc;                /* Slight color change on hover */
 }
 
+/* Navigation menu container */
 .nav {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  padding-right: 0.5rem;
+  margin-left: auto;           /* Push nav to right */
+  display: flex;               /* Horizontal layout */
+  align-items: center;         /* Vertical alignment */
+  padding-right: 0.5rem;       /* Spacing on right */
 }
 
+/* Navigation links */
 .nav a {
-  color: white;
-  text-decoration: none;
+  color: white;               /* Link color */
+  text-decoration: none;      /* Remove underline */
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  margin: 0 1rem;
+  font-weight: 600;           /* Bold links */
+  font-size: 1rem;            /* Font size for nav links */
+  margin: 0 1rem;             /* Horizontal spacing between links */
 }
 
+/* Nav link hover effect */
 .nav a:hover {
-  color: #ccc;
+  color: #ccc;                /* Lighten color on hover */
 }
 
-/* Main Layout */
+/* Main content layout */
 main {
   width: 100%;
-  max-width: 960px;
-  padding: 2rem 1rem;
-  margin: 0 auto;
+  max-width: 960px;           /* Limit content width */
+  padding: 2rem 1rem;         /* Inner padding */
+  margin: 0 auto;             /* Center main content */
   box-sizing: border-box;
-  word-wrap: break-word;
+  word-wrap: break-word;      /* Prevent overflow from long words */
 }
 
-/* Footer */
+/* Footer container */
 footer {
-  background: #1a1a1a;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  background: #1a1a1a;        /* Dark footer background */
+  color: white;               /* White text */
+  text-align: center;         /* Centered text */
+  padding: 1rem;              /* Padding inside footer */
+  margin-top: 2rem;           /* Space above footer */
 }
 
+/* Footer links container */
 .footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: flex;              /* Flex layout for icons */
+  justify-content: center;    /* Center horizontally */
+  flex-wrap: wrap;            /* Wrap on small screens */
+  gap: 2rem;                  /* Space between items */
   margin-top: 0.5rem;
 }
 
+/* Individual footer links */
 .footer-links a {
-  color: white;
-  text-decoration: none;
+  color: white;               /* Link color */
+  text-decoration: none;      /* Remove underline */
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 0.85rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-size: 0.85rem;         /* Smaller text */
+  display: flex;              /* For icon + text */
+  flex-direction: column;     /* Stack icon above text */
+  align-items: center;        /* Center icon/text */
 }
 
+/* Footer link hover effect */
 .footer-links a:hover {
   color: #ccc;
 }
 
+/* Footer icons size */
 .footer-links i {
   width: 24px;
   height: 24px;
-  margin-bottom: 4px;
+  margin-bottom: 4px;          /* Space between icon and text */
 }
 
+/* Grid layout for blog and research sections */
 .blog-grid, .research-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  row-gap: -1rem; /* or 0.5rem for tighter spacing */
-  column-gap: 2rem; /* keep horizontal spacing wider if desired */
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  row-gap: -1rem;             /* Vertical spacing between items */
+  column-gap: 2rem;           /* Horizontal spacing */
+  padding: 1rem;              /* Inner padding */
 }
 
-
+/* Individual blog or research card */
 .blog-card,
 .research-card {
-  background: #f7f7f7;
-  padding: 2rem 2.5rem;  /* increased horizontal padding */
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.3s ease;
-  overflow: hidden;
-  margin: 2rem auto;  /* center the card itself horizontally with vertical spacing */
+  background: #f7f7f7;        /* Light grey background */
+  padding: 2rem 2.5rem;       /* Inner spacing */
+  border-radius: 12px;        /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Shadow for depth */
+  cursor: pointer;            /* Pointer on hover */
+  position: relative;         /* Relative positioning for overlay effects */
+  transition: transform 0.3s ease; /* Smooth transform animations */
+  overflow: hidden;           /* Hide overflow */
+  margin: 2rem auto;          /* Center horizontally with vertical spacing */
 }
 
+/* Expanded card view */
 .blog-card.expanded,
 .research-card.expanded {
-  position: fixed;
-  top: 5%;
-  left: 7.5%;
+  position: fixed;            /* Overlay above page */
+  top: 5%;                    /* Vertical placement */
+  left: 7.5%;                 /* Horizontal placement */
   right: 7.5%;
-  width: 85%;
-  height: 90%;
-  overflow-y: auto;
-  backgroundcolor: white; /* optional: adjust text color for contrast */
-  z-index: 1001;
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: 85%;                 /* Card width */
+  height: 90%;                /* Card height */
+  overflow-y: auto;           /* Scroll if content overflows */
+  backgroundcolor: white;      /* Card background */
+  z-index: 1001;              /* On top of other elements */
+  padding: 3rem;              /* Inner spacing */
+  border-radius: 16px;        /* Rounded corners */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Larger shadow */
 }
 
+/* Blog and research snippets inside cards */
 .blog-snippet, .research-snippet {
-  font-size: 1rem;
-  color: #444;
+  font-size: 1rem;        /* Standard readable font size */
+  color: #444;            /* Dark gray text for readability */
 }
 
+/* Full content inside cards, hidden by default */
 .blog-full-content, .research-full-content {
-  display: none;
+  display: none;          /* Hide full content until card is expanded */
 }
 
+/* When a card is expanded, hide the snippet */
 .blog-card.expanded .blog-snippet,
 .research-card.expanded .research-snippet {
-  display: none;
+  display: none;          /* Hide preview text when expanded */
 }
 
+/* Show full content when card is expanded */
 .blog-card.expanded .blog-full-content,
 .research-card.expanded .research-full-content {
-  display: block;
-  margin-top: 2rem;
+  display: block;         /* Display full content */
+  margin-top: 2rem;       /* Add spacing above full content */
 }
 
+/* Overlay background for expanded cards */
 #blog-overlay, #research-overlay {
-  display: none;
-  position: fixed;
+  display: none;                  /* Hidden by default */
+  position: fixed;                /* Cover entire viewport */
   top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.7);
-  z-index: 1000;
+  width: 100vw; height: 100vh;   /* Full width and height */
+  background: rgba(0,0,0,0.7);   /* Semi-transparent black overlay */
+  z-index: 1000;                  /* Place above page but below expanded card */
 }
 
-/* Typography for Cards */
+/* Card titles typography */
 .blog-title, .research-title {
-  font-size: 1.5rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;           /* Large title size */
+  font-family: 'Inter', sans-serif; /* Use Inter for headings */
+  font-weight: 600;            /* Bold */
+  margin-bottom: 0.5rem;       /* Space below title */
 }
 
-/* Pub Card Style */
+/* Publication card style */
 .pub-card {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-left: 5px solid #ccc;
-  padding: 1.5rem;
-  margin: 2rem 0;
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  border-left: 5px solid #ccc; /* Accent line on left */
+  padding: 1.5rem;             /* Inner padding */
+  margin: 2rem 0;              /* Vertical spacing between cards */
+  border-radius: 8px;          /* Rounded corners */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06); /* Subtle shadow for depth */
 }
 
+/* Publication title inside pub-card */
 .pub-card h3 {
   font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;           /* Slightly smaller than blog/research titles */
+  margin-bottom: 0.5rem;       /* Space below title */
 }
 
+/* Publication description text */
 .pub-card p {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 1rem;
+  font-size: 1rem;              /* Standard font size */
+  color: #444;                  /* Dark gray text */
+  margin-bottom: 1rem;          /* Space below paragraph */
 }
 
+/* Ordered lists inside pub-card */
 .pub-card ol {
-  padding-left: 1.2rem;
+  padding-left: 1.2rem;         /* Indent list items */
 }
 
+/* List items spacing */
 .pub-card li {
-  margin-bottom: 0.6rem;
-  line-height: 1.5;
+  margin-bottom: 0.6rem;        /* Space between list items */
+  line-height: 1.5;             /* Comfortable line height */
 }
 
-/* Hamburger Menu */
+/* Hamburger menu button (mobile) */
 .hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
+  display: none;                 /* Hidden on desktop */
+  font-size: 2rem;               /* Large clickable icon */
+  background: none;              /* No background */
+  border: none;                  /* No border */
+  color: white;                  /* White icon */
+  cursor: pointer;               /* Pointer cursor */
+  z-index: 1001;                 /* Above most elements */
 }
 
-/* Mobile Styles */
+/* Mobile styles for screens smaller than 768px */
 @media (max-width: 768px) {
+  /* Topbar adjustments for mobile */
   .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 1rem;
+    flex-direction: column;      /* Stack title and nav vertically */
+    align-items: flex-start;     /* Align to left */
+    height: auto;                /* Allow flexible height */
+    padding: 1rem;               /* Padding inside topbar */
   }
 
   .topbar-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;           /* Slightly smaller title on mobile */
+    margin-bottom: 0.5rem;       /* Space below title */
   }
 
-  .nav {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    background: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    padding: 1rem;
-    z-index: 1000;
-  }
-
-  .nav.show {
-    display: flex;
-  }
-
-  .nav a {
-    font-size: 1rem;
-    color: white;
-    margin: 0.5rem 0;
-  }
-
-  .hamburger {
-    display: block;
-    position: absolute;
-    right: 1.5rem;
-    top: 1rem;
-  }
-
-  .hero, .hero2, .hero3, .hero4, .hero5 {
-    height: 60vh;
-    background-attachment: scroll;
-  }
-
-  main {
-    padding: 1rem;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .blog-card.expanded, .research-card.expanded {
-    top: 5%;
-    left: 5%;
-    right: 5%;
-    width: 80%;
-    height: 80%;
-  }
-
-  .pub-card {
-    padding: 1rem;
-  }
-
-  .blog-title, .research-title {
-    font-size: 1.3rem;
-  }
+  /* Mobile Navigation Menu */
+.nav {
+    display: none;               /* Hide navigation links by default on mobile */
+    flex-direction: column;      /* Stack links vertically */
+    align-items: flex-start;     /* Align links to the left */
+    background: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background for mobile menu */
+    position: absolute;          /* Position relative to top-right corner of viewport */
+    top: 60px;                   /* Position menu below topbar (60px height) */
+    right: 0;                     /* Align to right edge */
+    width: 100%;                 /* Full width for mobile menu */
+    padding: 1rem;               /* Inner spacing */
+    z-index: 1000;               /* Above page content */
 }
+
+/* Show navigation when hamburger menu is toggled */
+.nav.show {
+    display: flex;               /* Switch display to flex when active */
+}
+
+/* Navigation links inside mobile menu */
+.nav a {
+    font-size: 1rem;             /* Readable font size */
+    color: white;                /* White text on dark background */
+    margin: 0.5rem 0;            /* Vertical spacing between links */
+}
+
+/* Hamburger button for mobile menu */
+.hamburger {
+    display: block;              /* Make hamburger visible on mobile */
+    position: absolute;          /* Position relative to topbar */
+    right: 1.5rem;               /* Distance from right edge */
+    top: 1rem;                   /* Distance from top edge */
+}
+
+/* Reduce hero section height and disable parallax on mobile */
+.hero, .hero2, .hero3, .hero4, .hero5 {
+    height: 60vh;                /* Shorter hero sections for smaller screens */
+    background-attachment: scroll; /* Disable fixed background (no parallax) */
+}
+
+/* Main content adjustments on mobile */
+main {
+    padding: 1rem;               /* Less padding for smaller screens */
+}
+
+/* Footer links adjustments on mobile */
+.footer-links {
+    flex-direction: column;      /* Stack footer links vertically */
+    gap: 1rem;                   /* Spacing between links */
+}
+
+/* Adjust expanded blog/research cards on mobile */
+.blog-card.expanded, .research-card.expanded {
+    top: 5%;                     /* Small offset from top */
+    left: 5%;                    /* Small offset from left */
+    right: 5%;                   /* Small offset from right */
+    width: 80%;                  /* Narrower width on mobile */
+    height: 80%;                 /* Shorter height on mobile */
+}
+
+/* Reduce padding inside publication cards on mobile */
+.pub-card {
+    padding: 1rem;              
+}
+
+/* Adjust blog/research card titles on mobile */
+.blog-title, .research-title {
+    font-size: 1.3rem;           /* Slightly smaller titles */
+}
+
+/* Hero section base styling */
 .hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: -40px; /* pulls hero under fixed topbar */
+    position: relative;           /* Required for absolute background and overlay */
+    height: 100vh;                /* Full viewport height */
+    overflow: hidden;             /* Hide overflowing content */
+    margin-top: -40px;            /* Pull hero up under the fixed topbar */
 }
 
+/* Hero background image */
 .hero-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('blog.jpg') no-repeat center center/cover;
-  background-size: cover;
-  transform: scale(1);
-  transition: transform 0.1s ease-out;
-  z-index: 0;
+    position: absolute;           /* Absolute positioning for full coverage */
+    top: 0; left: 0;              /* Top-left corner */
+    width: 100%; height: 100%;    /* Full width and height */
+    background: url('blog.jpg') no-repeat center center/cover; /* Hero image */
+    background-size: cover;       /* Cover entire hero area */
+    transform: scale(1);          /* Initial scale for scroll zoom effect */
+    transition: transform 0.1s ease-out; /* Smooth zoom on scroll */
+    z-index: 0;                   /* Behind overlay content */
 }
 
+/* Hero overlay content (text, buttons, etc.) */
 .hero .overlay {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  padding: 2rem;
+    position: relative;           /* Relative positioning */
+    z-index: 1;                   /* Ensure overlay appears above background */
+    text-align: center;           /* Center text horizontally */
+    color: white;                 /* White text color */
+    padding: 2rem;                /* Inner spacing for overlay */
 }
 
-.hero2 {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: -40px;
-}
+/* Hero sections 2-5 with respective background images */
+.hero2 { position: relative; height: 100vh; overflow: hidden; margin-top: -40px; }
+.hero2-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('about.jpg') no-repeat center center/cover; background-size: cover; transition: transform 0.1s ease-out; z-index: 0; }
+.hero2 .overlay { position: relative; z-index: 1; text-align: center; color: white; padding: 3rem 1rem; font-family: 'Inter', sans-serif; font-size: 2rem; }
 
-.hero2-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('about.jpg') no-repeat center center/cover;
-  background-size: cover;
-  transition: transform 0.1s ease-out;
-  z-index: 0;
-}
+.hero3 { position: relative; height: 100vh; overflow: hidden; margin-top: -40px; }
+.hero3-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('research.jpg') no-repeat center center/cover; background-size: cover; transition: transform 0.1s ease-out; z-index: 0; }
+.hero3 .overlay { position: relative; z-index: 1; text-align: center; color: white; padding: 3rem 1rem; font-family: 'Inter', sans-serif; font-size: 2rem; }
 
-.hero2 .overlay {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  padding: 3rem 1rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
-}
-.hero3 {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: -40px;
-}
+.hero4 { position: relative; height: 100vh; overflow: hidden; margin-top: -40px; }
+.hero4-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('blog2.jpg') no-repeat center center/cover; background-size: cover; transform: scale(1); transition: transform 0.1s ease-out; z-index: 0; }
+.hero4 .overlay { position: relative; z-index: 1; text-align: center; color: white; padding: 2rem; }
 
-.hero3-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('research.jpg') no-repeat center center/cover;
-  background-size: cover;
-  transition: transform 0.1s ease-out;
-  z-index: 0;
-}
+.hero5 { position: relative; height: 100vh; overflow: hidden; margin-top: -40px; }
+.hero5-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('notes.jpg') no-repeat center center/cover; background-size: cover; transform: scale(1); transition: transform 0.1s ease-out; z-index: 0; }
+.hero5 .overlay { position: relative; z-index: 1; text-align: center; color: white; padding: 2rem; }
 
-.hero3 .overlay {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  padding: 3rem 1rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
-}
-.hero4 {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: -40px; /* pulls hero under fixed topbar */
-}
-
-.hero4-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('blog2.jpg') no-repeat center center/cover;
-  background-size: cover;
-  transform: scale(1);
-  transition: transform 0.1s ease-out;
-  z-index: 0;
-}
-
-.hero4 .overlay {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-}
-.hero5 {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: -40px; /* pulls hero under fixed topbar */
-}
-
-.hero5-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('notes.jpg') no-repeat center center/cover;
-  background-size: cover;
-  transform: scale(1);
-  transition: transform 0.1s ease-out;
-  z-index: 0;
-}
-
-.hero5 .overlay {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-}
+/* Paragraph styling */
 p {
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
+    line-height: 1.7;            /* Improve readability */
+    margin-bottom: 1.2rem;       /* Space between paragraphs */
 }
