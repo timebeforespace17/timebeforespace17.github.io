@@ -14,7 +14,7 @@
   <button class="hamburger" onclick="toggleMenu()">☰</button>
 
   <nav class="nav" id="mobileNav">
-<a href="about.html">About Mee</a>
+<a href="about.html">About Me</a>
     <a href="publications.html">Research and Publications</a>
     <a href="blog.html">Blog</a>
   </nav>
@@ -66,7 +66,7 @@
   const bg = document.querySelector('.hero5-bg');
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const scale = 1 +Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
+    const scale = 1 +Math.min(scrollY / 1000, 0); // Zoom out up to 1.3x
     bg.style.transform = `scale(${scale})`;
   });
 </script>
