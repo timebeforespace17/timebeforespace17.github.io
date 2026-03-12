@@ -17,8 +17,10 @@
 }
 
 .two-column img {
-  width: 100%;
+  width: 80%;
   height: auto;
+  border-radius: 16px; /* increase from 8px to soften more */
+  object-fit: cover;   /* ensures image scales nicely */
 }
 
 /* Reset default margin/padding and set box-sizing to border-box for easier layout control */
@@ -498,4 +500,8 @@ p {
 /* Small spacing under your name/title */
 .two-column h2 {
   margin-bottom: 0.6rem;
+}
+  /* Increase main content spacing */
+main {
+  padding: 4rem 2rem; /* increase top/bottom and left/right padding */
 }
