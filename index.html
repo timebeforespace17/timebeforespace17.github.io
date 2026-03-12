@@ -7,32 +7,46 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
 
 <header class="topbar">
-  <a href="about.html" class="topbar-title">Madhur Mehta</a>
- <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <a href="index.html" class="topbar-title">Madhur Mehta</a>
+
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
 
   <nav class="nav" id="mobileNav">
-    <a href="publications.html">Research and Publications</a>
+    <a href="publications.html">Research</a>
     <a href="notes.html">Notes</a>
-    <a href="blog.html">Blog</a>
+    <a href="blog.html">Writing</a>
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="overlay">
-  </div>
-  <div class="hero-quote">
-    <p>“Nature is mysterious, surprising, and yet comfortingly simple...”</p>
-  </div>
+  <div class="overlay"></div>
 </section>
-  
+
 <main>
-   <!-- Dynamic greeting: changes every few seconds -->
-    <h2 id="greeting">Welcome</h2> <!-- id used to target this element with JS -->
-  <p>I’m Madhur Mehta, a Heising-Simons Postdoctoral Fellow at UCSB, originally from Jaipur, India. I study black holes, horizonless compact objects, and the quantum nature of spacetime, and gravitational waves, connecting theory with observations to explore how quantum gravity might leave detectable signals in the cosmos. My work addresses the black hole information paradox and the thermodynamics of extremely compact objects (ECOs). Beyond physics, I enjoy sketching, painting, cooking, solving puzzles, playing chess, running, boxing, listening to music, and watching movies and anime, and I share my passion for science through mentoring and my YouTube channel, Time Before Space.</p>
+
+<h1>Madhur Mehta</h1>
+<h3>Theoretical Physics · Black Holes · Quantum Gravity</h3>
+
+<p>
+I am a Heising–Simons Postdoctoral Fellow at UC Santa Barbara. My research
+focuses on black hole physics, the quantum structure of spacetime, and
+horizonless compact objects such as fuzzballs and extremely compact objects
+(ECOs). I study how microscopic descriptions of black holes in string theory
+connect to gravitational dynamics and observable phenomena.
+</p>
+
+<p>
+More recently, I am developing expertise in gravitational wave physics
+to explore whether quantum gravity effects could leave detectable
+signatures in astrophysical observations. My work addresses the black hole
+information paradox and the thermodynamics of compact horizonless objects.
+</p>
+
 </main>
 
 <footer>
@@ -41,103 +55,36 @@
       <i data-feather="mail"></i>
       <span>Email</span>
     </a>
+
     <a href="https://physics.osu.edu/people/mehta.493">
       <i data-feather="book-open"></i>
-      <span>OSU Profile</span>
+      <span>Profile</span>
     </a>
+
     <a href="https://www.linkedin.com/in/madhur-mehta-a7a400120/">
       <i data-feather="linkedin"></i>
       <span>LinkedIn</span>
     </a>
+
     <a href="https://www.youtube.com/@TimeBeforeSpace">
       <i data-feather="youtube"></i>
       <span>YouTube</span>
     </a>
   </p>
+
   <p>© 2025 Madhur Mehta</p>
 </footer>
 
-<script src="https://unpkg.com/feather-icons"></script>
 <script>
   feather.replace();
 </script>
 
-<!-- Zoom-out scroll effect -->
 <script>
-  const bg = document.querySelector('.hero-bg');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const scale = 1 +Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
-    bg.style.transform = `scale(${scale})`;
-  });
+function toggleMenu() {
+  const nav = document.getElementById("mobileNav");
+  nav.classList.toggle("show");
+}
 </script>
-<!--- Mobile Friendly--->
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("mobileNav");
-    nav.classList.toggle("show");
-  }
-</script>
-  <script>
-  // Array of greetings to cycle through
-  const greetings = [
-  "Hi!",            // English
-  "Hello!",         // English
-  "Hey!",           // English
-  "Namaste!",       // Hindi (Latin)
-  "नमस्ते!",         // Hindi (Devanagari)
-  "Konnichiwa!",    // Japanese (Romaji)
-  "こんにちは!",       // Japanese (Hiragana)
-  "Hola!",          // Spanish
-  "Bonjour!",       // French
-  "Salut!",         // French casual
-  "Ciao!",          // Italian
-  "Hallo!",         // German
-  "Guten Tag!",     // German formal
-  "Salam!",         // Arabic (Latin)
-  "سلام!",          // Arabic (Arabic script)
-  "Shalom!",        // Hebrew (Latin)
-  "שָׁלוֹם!",        // Hebrew (Hebrew script)
-  "안녕하세요!",        // Korean
-  "你好!",           // Chinese (Mandarin)
-  "Привет!",        // Russian
-  "Здравствуйте!",   // Russian formal
-  "Γειά σου!",       // Greek
-  "Hej!",           // Swedish/Danish
-  "Merhaba!",       // Turkish
-  "Sawubona!",      // Zulu
-  "Selamat pagi!",  // Malay / Indonesian
-  "Sawasdee!",      // Thai (Romanized)
-  "สวัสดี!",        // Thai
-  "Xin chào!",      // Vietnamese
-  "Ahoj!"           // Czech
-];
 
-
-const greetingElement = document.getElementById("greeting");
-
-  function updateGreeting() {
-    // Pick a random greeting
-    const randomIndex = Math.floor(Math.random() * greetings.length);
-    const greeting = greetings[randomIndex];
-
-    // Fade out first
-    greetingElement.style.transition = "opacity 0.5s ease-in-out";
-    greetingElement.style.opacity = 0;
-
-    // Wait for fade-out to finish before changing text
-    setTimeout(() => {
-      greetingElement.textContent = greeting;
-      greetingElement.style.opacity = 1; // fade in
-    }, 500); // 500ms matches the CSS transition duration
-  }
-
-  // Initial greeting
-  updateGreeting();
-
-  // Change greeting every 3 seconds randomly
-  setInterval(updateGreeting, 5000);
-</script>
-  
 </body>
 </html>
