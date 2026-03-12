@@ -1,6 +1,42 @@
 /* Import Google Fonts: Inter for headings, Merriweather for body text */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
 
+/* Space out sections and headings */
+.two-column .text h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;       /* larger than before for hierarchy */
+  margin-top: 2.5rem;      /* space above the heading */
+  margin-bottom: 1rem;     /* space below heading */
+  font-weight: 600;
+  color: #222;             /* slightly darker for clarity */
+  line-height: 1.2;
+}
+
+/* Paragraph styling */
+.two-column .text p {
+  line-height: 1.8;        /* more breathing room */
+  margin-bottom: 1.6rem;   /* space between paragraphs */
+  font-size: 1.05rem;      /* slightly larger for readability */
+  color: #333;             /* softer than pure black */
+}
+
+/* Limit width for readability */
+.two-column .text {
+  max-width: 70ch;         /* optimal reading width */
+}
+
+/* Soften emphasis on <strong> */
+.two-column .text strong {
+  font-weight: 600;        /* bold but not overpowering */
+  color: #111;             /* slightly darker than paragraph text */
+}
+
+/* Optional: add subtle spacing after line breaks in titles/fellowship line */
+.two-column .text p br {
+  content: "";
+  margin-bottom: 0.5rem;
+  display: block;
+}
 
 .two-column {
   display: flex;
