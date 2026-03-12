@@ -162,7 +162,7 @@ html, body {
 /* Main content layout */
 main {
   width: 100%;
-  max-width: 100%;           /* Limit content width */
+  max-width: 80%;           /* Limit content width */
   padding: 2rem 1rem;         /* Inner padding */
   margin: 0 auto;             /* Center main content */
   box-sizing: border-box;
