@@ -1,6 +1,7 @@
 /* Import Google Fonts: Inter for headings, Merriweather for body text */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
-
+.about-text { background: red; }
+.about-photo { background: blue; }
 .two-column {
   display: flex;
   align-items: flex-start;
