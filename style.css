@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
 /* Wrap each logical section with a subtle background and spacing */
 .two-column .text h3 {
-  font-family: 'Merriweather', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   margin-top: 0;            /* reset top margin inside box */
   margin-bottom: 0.8rem;    /* space below heading */
@@ -13,6 +13,7 @@
 
 /* Paragraph spacing */
 .two-column .text p {
+  font-family: 'Merriweather', serif;
   line-height: 1.8;
   margin-bottom: 1.2rem;
   font-size: 1.05rem;
