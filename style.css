@@ -1,42 +1,24 @@
 /* Import Google Fonts: Inter for headings, Merriweather for body text */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
-.about-text { background: red; }
-.about-photo { background: blue; }
+
+
 .two-column {
   display: flex;
+  gap: 40px;
   align-items: flex-start;
-  gap: 40px;            /* space between text and photo */
-  max-width: 1200px;    /* limits width on large screens */
-  margin: 0 auto;
-  padding: 40px 20px;
 }
 
 .two-column .text {
-  flex: 2;              /* text takes ~2/3 of width */
-  text-align: left;
+  flex: 2;
 }
 
 .two-column .image {
-  flex: 1;              /* image takes ~1/3 of width */
+  flex: 1;
 }
 
-.two-column .image img {
+.two-column img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .two-column {
-    flex-direction: column;  /* stack vertically on small screens */
-    align-items: center;
-  }
-  .two-column .image {
-    width: 80%;             /* smaller photo on mobile */
-    margin-top: 20px;
-  }
 }
 
 /* Reset default margin/padding and set box-sizing to border-box for easier layout control */
@@ -493,3 +475,6 @@ p {
     line-height: 1.7;            /* Improve readability */
     margin-bottom: 1.2rem;       /* Space between paragraphs */
 }
+
+  .text { background: lightblue; }
+.image { background: lightgreen; }
