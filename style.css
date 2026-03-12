@@ -98,7 +98,7 @@ html, body {
 /* Hero Sections: common styles for all hero variants */
 .hero, .hero2, .hero3, .hero4, .hero5 {
   position: relative;         /* Relative for positioning overlay inside */
-  height: 80vh;              /* Full viewport height */
+  height: 60vh;              /* Full viewport height */
   background-attachment: fixed; /* Parallax effect */
   background-size: cover;     /* Cover entire hero area */
   background-position: center; /* Center the image */
