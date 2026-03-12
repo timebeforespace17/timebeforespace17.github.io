@@ -1,41 +1,50 @@
 /* Import Google Fonts: Inter for headings, Merriweather for body text */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
-
-/* Space out sections and headings */
+/* Wrap each logical section with a subtle background and spacing */
 .two-column .text h3 {
   font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;       /* larger than before for hierarchy */
-  margin-top: 2.5rem;      /* space above the heading */
-  margin-bottom: 1rem;     /* space below heading */
+  font-size: 1.5rem;
+  margin-top: 0;            /* reset top margin inside box */
+  margin-bottom: 0.8rem;    /* space below heading */
   font-weight: 600;
-  color: #222;             /* slightly darker for clarity */
+  color: #222;
   line-height: 1.2;
 }
 
-/* Paragraph styling */
+/* Paragraph spacing */
 .two-column .text p {
-  line-height: 1.8;        /* more breathing room */
-  margin-bottom: 1.6rem;   /* space between paragraphs */
-  font-size: 1.05rem;      /* slightly larger for readability */
-  color: #333;             /* softer than pure black */
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+/* Section wrapper effect */
+.two-column .text h3 + p,       /* first paragraph after h3 */
+.two-column .text p + h3 {       /* heading after paragraph */
+  margin-top: 1rem;
+}
+
+/* Add subtle background and padding to each section */
+.two-column .text h3 {
+  padding: 0.4rem 0.6rem;
+  background-color: rgba(240, 240, 240, 0.6); /* light gray box */
+  border-left: 4px solid #888;                 /* accent line */
+  border-radius: 6px;
+}
+
+/* Slight spacing around each section */
+.two-column .text p:first-of-type {
+  margin-top: 1rem;
+}
+
+.two-column .text p:last-of-type {
+  margin-bottom: 2rem;
 }
 
 /* Limit width for readability */
 .two-column .text {
-  max-width: 70ch;         /* optimal reading width */
-}
-
-/* Soften emphasis on <strong> */
-.two-column .text strong {
-  font-weight: 600;        /* bold but not overpowering */
-  color: #111;             /* slightly darker than paragraph text */
-}
-
-/* Optional: add subtle spacing after line breaks in titles/fellowship line */
-.two-column .text p br {
-  content: "";
-  margin-bottom: 0.5rem;
-  display: block;
+  max-width: 70ch;
 }
 
 .two-column {
@@ -53,7 +62,7 @@
 }
 
 .two-column img {
-  width: 80%;
+  width: 100%;
   height: auto;
   border-radius: 16px; /* increase from 8px to soften more */
   object-fit: cover;   /* ensures image scales nicely */
