@@ -1,41 +1,48 @@
 /* Import Google Fonts: Inter for headings, Merriweather for body text */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
 
+/* About Section */
 .about-container {
   display: flex;
-  flex-wrap: wrap;       /* allows stacking on smaller screens */
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 40px;             /* space between text and photo */
-  max-width: 1000px;
+  max-width: 1200px;      /* wider container to use screen space */
   margin: 0 auto;
   padding: 40px 20px;
+  gap: 60px;              /* space between text and photo */
 }
 
 .about-text {
-  flex: 1 1 600px;       /* takes available space on left */
+  flex: 1 1 60%;           /* text takes ~60% of container width */
+  min-width: 300px;        /* prevents shrinking too much */
   text-align: left;
 }
 
 .about-photo {
-  flex: 0 0 250px;       /* fixed width for right column */
+  flex: 1 1 35%;           /* photo takes ~35% of width */
+  min-width: 200px;        /* ensures photo stays visible */
 }
 
 .about-photo img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: auto;            /* keeps correct aspect ratio */
   object-fit: cover;
+  border-radius: 8px;      /* subtle rounding */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
 }
 
-/* Responsive for smaller screens */
+/* Mobile / tablet responsiveness */
 @media (max-width: 768px) {
   .about-container {
-    flex-direction: column; /* stack text above photo */
+    flex-direction: column;  /* stack vertically */
     align-items: center;
+    gap: 30px;
+  }
+  .about-text, .about-photo {
+    flex: 1 1 100%;
   }
   .about-photo {
-    flex: 0 0 200px;
-    margin-top: 20px;
+    max-width: 300px;       /* manageable photo width on mobile */
   }
 }
 
