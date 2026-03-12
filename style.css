@@ -476,5 +476,26 @@ p {
     margin-bottom: 1.2rem;       /* Space between paragraphs */
 }
 
-  .text { background: lightblue; }
-.image { background: lightgreen; }
+
+  /* Improve readability of the main text column */
+.two-column .text {
+  max-width: 65ch;          /* optimal reading width */
+}
+
+/* Section headings */
+.two-column h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraph spacing */
+.two-column p {
+  margin-bottom: 1.2rem;
+}
+
+/* Small spacing under your name/title */
+.two-column h2 {
+  margin-bottom: 0.6rem;
+}
