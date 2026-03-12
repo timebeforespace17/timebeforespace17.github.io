@@ -3,34 +3,34 @@
 
 .about-container {
   display: flex;
-  flex-wrap: wrap; /* makes it responsive */
+  flex-wrap: wrap;       /* allows stacking on smaller screens */
   align-items: flex-start;
-  gap: 40px;       /* space between text and photo */
+  gap: 40px;             /* space between text and photo */
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
 .about-text {
-  flex: 1 1 600px;  /* text takes at least 600px, grows as needed */
+  flex: 1 1 600px;       /* takes available space on left */
   text-align: left;
 }
 
 .about-photo {
-  flex: 0 0 250px; /* photo fixed width */
+  flex: 0 0 250px;       /* fixed width for right column */
 }
 
 .about-photo img {
   width: 100%;
   height: auto;
-  border-radius: 8px; /* optional: rounded corners */
+  border-radius: 8px;
   object-fit: cover;
 }
 
-/* Responsive for small screens */
+/* Responsive for smaller screens */
 @media (max-width: 768px) {
   .about-container {
-    flex-direction: column;
+    flex-direction: column; /* stack text above photo */
     align-items: center;
   }
   .about-photo {
@@ -38,7 +38,6 @@
     margin-top: 20px;
   }
 }
-
 
 /* Reset default margin/padding and set box-sizing to border-box for easier layout control */
 * {
