@@ -60,6 +60,7 @@
 
 .two-column .image {
   flex: 1;
+  font-family: 'Merriweather', serif;
 }
 
 .two-column img {
