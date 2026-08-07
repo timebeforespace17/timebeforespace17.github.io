@@ -1,931 +1,107 @@
-/* =========================================================
-   MADHUR MEHTA — SINGLE PAGE ACADEMIC SITE
-   ========================================================= */
-
-
-/* =========================================================
-   RESET + GLOBAL TYPOGRAPHY
-   ========================================================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ========================================================= MADHUR MEHTA — SINGLE PAGE ACADEMIC SITE ========================================================= */ /* ========================================================= RESET + GLOBAL TYPOGRAPHY ========================================================= */ * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { width: 100%; overflow-x: hidden; background: #ffffff; color: #111111; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; } button, input, textarea, select { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } img { display: block; max-width: 100%; } a { color: inherit; } p { margin-bottom: 1.15rem; } /* ========================================================= TOP NAVIGATION ========================================================= */ .topbar { position: fixed; top: 0; left: 0; width: 100%; height: 64px; display: flex; align-items: center; padding: 0 2.5rem; background: rgba(20, 20, 20, 0.42); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 255, 255, 0.12); z-index: 1000; } .topbar-title { color: #ffffff; font-size: 1.25rem; font-weight: 500; letter-spacing: -0.02em; text-decoration: none; } .topbar-title:hover { opacity: 0.72; } .nav { margin-left: auto; display: flex; align-items: center; gap: 1.8rem; } .nav a { color: #ffffff; font-size: 0.92rem; font-weight: 500; text-decoration: none; transition: opacity 0.2s ease; } .nav a:hover { opacity: 0.65; } /* ========================================================= MOBILE HAMBURGER ========================================================= */ .hamburger { display: none; margin-left: auto; background: none; border: none; color: #ffffff; font-size: 1.7rem; cursor: pointer; } /* ========================================================= HERO ========================================================= */ .hero { position: relative; width: 100%; height: 78vh; min-height: 520px; overflow: hidden; background: url("cosmos-wormhole-5200x3250-9652.jpg") no-repeat center center / cover; } .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; background: url("cosmos-wormhole-5200x3250-9652.jpg") no-repeat center center / cover; transform: scale(1); transition: transform 0.1s ease-out; z-index: 0; } .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient( to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.12) 55%, rgba(0, 0, 0, 0.58) ); z-index: 1; } .hero .overlay { position: relative; z-index: 2; } .hero-quote { position: absolute; left: 50%; bottom: 2rem; width: min(90%, 900px); transform: translateX(-50%); text-align: center; color: rgba(255, 255, 255, 0.92); font-size: 1.15rem; font-weight: 300; font-style: italic; z-index: 3; } .hero-quote p { margin: 0; } /* ========================================================= MAIN CONTENT ========================================================= */ main { width: min(1180px, 88%); margin: 0 auto; padding: 6rem 0 2rem; position: relative; } /* ========================================================= INTRO ========================================================= */ .intro {
+  position: relative;
+  padding-bottom: 6rem;
+  isolation: isolate;
 }
 
-html {
-  scroll-behavior: smooth;
+.intro::before {
+  content: "";
+  position: absolute;
+  top: -6rem;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f7f9fb 58%,
+    #f2f6f8 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+} .two-column { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.75fr); gap: 5rem; align-items: start; } .two-column .text { max-width: 720px; } .eyebrow { margin-bottom: 1.1rem; color: #666666; font-size: 0.86rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; } .intro h1 { margin-bottom: 1.6rem; font-size: clamp(3rem, 7vw, 5.7rem); font-weight: 400; line-height: 0.98; letter-spacing: -0.055em; } .lead { max-width: 650px; margin-bottom: 1.6rem; font-size: clamp(1.35rem, 2.5vw, 1.9rem); font-weight: 400; line-height: 1.35; letter-spacing: -0.025em; } .intro .text > p:not(.eyebrow):not(.lead) { max-width: 650px; color: #333333; } /* ========================================================= INTRO LINKS ========================================================= */ .intro-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-top: 2rem; } .intro-links a { color: #111111; font-size: 0.95rem; font-weight: 500; text-decoration: none; border-bottom: 1px solid #bbbbbb; transition: border-color 0.2s ease, opacity 0.2s ease; } .intro-links a:hover { border-color: #111111; } /* ========================================================= PORTRAIT ========================================================= */ .two-column .image { width: 100%; } .two-column .image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; } .two-column .image p { margin-top: 1rem; color: #555555; font-size: 0.88rem; line-height: 1.5; } .two-column .image a { color: #111111; text-decoration: none; border-bottom: 1px solid #cccccc; } .two-column .image a:hover { border-color: #111111; } /* ========================================================= GENERAL SECTIONS ========================================================= */ .section {
+  position: relative;
+  scroll-margin-top: 90px;
+  padding: 6rem 0;
+  border-top: 1px solid rgba(40, 55, 70, 0.08);
+  isolation: isolate;
 }
 
-body {
-  width: 100%;
-  overflow-x: hidden;
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+} .section-number { margin-bottom: 0.65rem; color: #888888; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; } .section h2 { margin-bottom: 2rem; font-size: clamp(2.25rem, 5vw, 4rem); font-weight: 400; line-height: 1; letter-spacing: -0.045em; } .section-intro { max-width: 760px; margin-bottom: 3.5rem; color: #333333; font-size: 1.25rem; line-height: 1.55; } /* ========================================================= SECTION OMBRE BACKGROUNDS ========================================================= */
 
-  background: #ffffff;
-  color: #111111;
-
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.65;
-
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+#research::before {
+  background: linear-gradient(
+    180deg,
+    #f2f6f8 0%,
+    #f8fafb 52%,
+    #ffffff 100%
+  );
 }
 
-button,
-input,
-textarea,
-select {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+#current-work::before {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f5f8fa 48%,
+    #edf3f6 100%
+  );
 }
 
-img {
-  display: block;
-  max-width: 100%;
+#publications::before {
+  background: linear-gradient(
+    180deg,
+    #edf3f6 0%,
+    #f7f8f8 48%,
+    #ffffff 100%
+  );
 }
 
-a {
-  color: inherit;
+#outreach::before {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f5f8fa 55%,
+    #eef4f7 100%
+  );
 }
 
-p {
-  margin-bottom: 1.15rem;
+/* ========================================================= RESEARCH ========================================================= */ .research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.5rem; } .research-item { padding-top: 1.4rem; border-top: 1px solid rgba(40, 55, 70, 0.16); } .research-item h3 { margin-bottom: 1rem; font-size: 1.28rem; font-weight: 500; line-height: 1.25; letter-spacing: -0.02em; } .research-item p { color: #444444; font-size: 1rem; line-height: 1.7; } /* ========================================================= CURRENT WORK ========================================================= */ .current-work-list { display: flex; flex-direction: column; } .current-work-item { display: grid; grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.6fr); gap: 4rem; padding: 2.5rem 0; border-top: 1px solid rgba(40, 55, 70, 0.10); } .current-work-item:last-child { border-bottom: 1px solid rgba(40, 55, 70, 0.10); } .current-work-item h3 { font-size: 1.25rem; font-weight: 500; line-height: 1.3; letter-spacing: -0.02em; } .current-work-item p { margin: 0; color: #444444; line-height: 1.7; } /* ========================================================= PUBLICATIONS ========================================================= */ .publication-list { display: flex; flex-direction: column; } .publication { padding: 2rem 0; border-top: 1px solid rgba(40, 55, 70, 0.10); } .publication:last-child { border-bottom: 1px solid rgba(40, 55, 70, 0.10); } .publication h3 { max-width: 850px; margin-bottom: 0.65rem; font-size: 1.2rem; font-weight: 500; line-height: 1.4; letter-spacing: -0.015em; } .publication-authors, .publication-meta { margin-bottom: 0.35rem; color: #666666; font-size: 0.92rem; line-height: 1.5; } .publication-links { display: flex; gap: 1rem; margin-top: 0.7rem; margin-bottom: 0; } .publication-links a, .more-publications a { color: #111111; font-size: 0.9rem; font-weight: 500; text-decoration: none; border-bottom: 1px solid #bdbdbd; } .publication-links a:hover, .more-publications a:hover { border-color: #111111; } .more-publications { margin-top: 2rem; } /* ========================================================= ABOUT ========================================================= */ #about p { max-width: 760px; color: #333333; font-size: 1.05rem; line-height: 1.75; } /* ========================================================= OUTREACH ========================================================= */ #outreach p { max-width: 760px; color: #333333; font-size: 1.05rem; line-height: 1.75; } #outreach a { color: #111111; text-decoration: none; border-bottom: 1px solid #bbbbbb; } #outreach a:hover { border-color: #111111; } /* ========================================================= CONTACT ========================================================= */ .contact-section p { max-width: 600px; color: #333333; } .contact-section a { color: #111111; text-decoration: none; border-bottom: 1px solid #bbbbbb; } .contact-section a:hover { border-color: #111111; } /* ========================================================= FOOTER ========================================================= */ footer { margin-top: 5rem; padding: 3rem 2rem 2.5rem; background: #111111; color: #ffffff; text-align: center; } .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem; } .footer-links a { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; color: #ffffff; font-size: 0.78rem; font-weight: 400; text-decoration: none; opacity: 0.82; transition: opacity 0.2s ease; } .footer-links a:hover { opacity: 1; } .footer-links svg { width: 21px; height: 21px; } footer > p:last-child { margin: 0; color: #aaaaaa; font-size: 0.78rem; } 
+.footer-contact {
+  margin-bottom: 2rem;
 }
 
-
-/* =========================================================
-   TOP NAVIGATION
-   ========================================================= */
-
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 64px;
-
-  display: flex;
-  align-items: center;
-
-  padding: 0 2.5rem;
-
-  background: rgba(20, 20, 20, 0.42);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-
-  z-index: 1000;
-}
-
-.topbar-title {
+.footer-contact h2 {
+  margin-bottom: 0.7rem;
   color: #ffffff;
-
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   font-weight: 500;
   letter-spacing: -0.02em;
-
-  text-decoration: none;
 }
 
-.topbar-title:hover {
-  opacity: 0.72;
-}
-
-.nav {
-  margin-left: auto;
-
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-}
-
-.nav a {
-  color: #ffffff;
-
-  font-size: 0.92rem;
-  font-weight: 500;
-
-  text-decoration: none;
-
-  transition: opacity 0.2s ease;
-}
-
-.nav a:hover {
-  opacity: 0.65;
-}
-
-
-/* =========================================================
-   MOBILE HAMBURGER
-   ========================================================= */
-
-.hamburger {
-  display: none;
-
-  margin-left: auto;
-
-  background: none;
-  border: none;
-
-  color: #ffffff;
-  font-size: 1.7rem;
-
-  cursor: pointer;
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero {
-  position: relative;
-
-  width: 100%;
-  height: 78vh;
-  min-height: 520px;
-
-  overflow: hidden;
-
-  background:
-    url("cosmos-wormhole-5200x3250-9652.jpg")
-    no-repeat
-    center center / cover;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background:
-    url("cosmos-wormhole-5200x3250-9652.jpg")
-    no-repeat
-    center center / cover;
-
-  transform: scale(1);
-  transition: transform 0.1s ease-out;
-
-  z-index: 0;
-}
-
-.hero::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.05),
-      rgba(0, 0, 0, 0.12) 55%,
-      rgba(0, 0, 0, 0.58)
-    );
-
-  z-index: 1;
-}
-
-.hero .overlay {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-quote {
-  position: absolute;
-
-  left: 50%;
-  bottom: 2rem;
-
-  width: min(90%, 900px);
-
-  transform: translateX(-50%);
-
-  text-align: center;
-
-  color: rgba(255, 255, 255, 0.92);
-
-  font-size: 1.15rem;
-  font-weight: 300;
-  font-style: italic;
-
-  z-index: 3;
-}
-
-.hero-quote p {
-  margin: 0;
-}
-
-
-/* =========================================================
-   MAIN CONTENT
-   ========================================================= */
-
-main {
-  width: min(1180px, 88%);
-
-  margin: 0 auto;
-
-  padding: 6rem 0 2rem;
-}
-
-
-/* =========================================================
-   INTRO
-   ========================================================= */
-
-.intro {
-  padding-bottom: 6rem;
-}
-
-.two-column {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.7fr)
-    minmax(260px, 0.75fr);
-
-  gap: 5rem;
-
-  align-items: start;
-}
-
-.two-column .text {
-  max-width: 720px;
-}
-
-.eyebrow {
-  margin-bottom: 1.1rem;
-
-  color: #666666;
-
-  font-size: 0.86rem;
-  font-weight: 500;
-
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.intro h1 {
-  margin-bottom: 1.6rem;
-
-  font-size: clamp(3rem, 7vw, 5.7rem);
-  font-weight: 400;
-
-  line-height: 0.98;
-  letter-spacing: -0.055em;
-}
-
-.lead {
-  max-width: 650px;
-
-  margin-bottom: 1.6rem;
-
-  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
-  font-weight: 400;
-
-  line-height: 1.35;
-  letter-spacing: -0.025em;
-}
-
-.intro .text > p:not(.eyebrow):not(.lead) {
-  max-width: 650px;
-
-  color: #333333;
-}
-
-
-/* =========================================================
-   INTRO LINKS
-   ========================================================= */
-
-.intro-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 0.75rem 1.5rem;
-
-  margin-top: 2rem;
-}
-
-.intro-links a {
-  color: #111111;
-
-  font-size: 0.95rem;
-  font-weight: 500;
-
-  text-decoration: none;
-
-  border-bottom: 1px solid #bbbbbb;
-
-  transition:
-    border-color 0.2s ease,
-    opacity 0.2s ease;
-}
-
-.intro-links a:hover {
-  border-color: #111111;
-}
-
-
-/* =========================================================
-   PORTRAIT
-   ========================================================= */
-
-.two-column .image {
-  width: 100%;
-}
-
-.two-column .image img {
-  width: 100%;
-
-  aspect-ratio: 4 / 5;
-
-  object-fit: cover;
-
-  border-radius: 4px;
-}
-
-.two-column .image p {
-  margin-top: 1rem;
-
-  color: #555555;
-
-  font-size: 0.88rem;
-  line-height: 1.5;
-}
-
-.two-column .image a {
-  color: #111111;
-
-  text-decoration: none;
-
-  border-bottom: 1px solid #cccccc;
-}
-
-.two-column .image a:hover {
-  border-color: #111111;
-}
-
-
-/* =========================================================
-   GENERAL SECTIONS
-   ========================================================= */
-
-.section {
-  scroll-margin-top: 90px;
-
-  padding: 6rem 0;
-
-  border-top: 1px solid #dddddd;
-}
-
-.section-number {
-  margin-bottom: 0.65rem;
-
-  color: #888888;
-
-  font-size: 0.78rem;
-  font-weight: 500;
-
-  letter-spacing: 0.12em;
-}
-
-.section h2 {
-  margin-bottom: 2rem;
-
-  font-size: clamp(2.25rem, 5vw, 4rem);
-  font-weight: 400;
-
-  line-height: 1;
-  letter-spacing: -0.045em;
-}
-
-.section-intro {
-  max-width: 760px;
-
-  margin-bottom: 3.5rem;
-
-  color: #333333;
-
-  font-size: 1.25rem;
+.footer-contact p {
+  margin-bottom: 0.6rem;
+  color: #c8c8c8;
+  font-size: 0.9rem;
   line-height: 1.55;
 }
 
-
-/* =========================================================
-   RESEARCH
-   ========================================================= */
-
-.research-grid {
-  display: grid;
-
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 3.5rem;
-}
-
-.research-item {
-  padding-top: 1.4rem;
-
-  border-top: 1px solid #bbbbbb;
-}
-
-.research-item h3 {
-  margin-bottom: 1rem;
-
-  font-size: 1.28rem;
-  font-weight: 500;
-
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-}
-
-.research-item p {
-  color: #444444;
-
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   CURRENT WORK
-   ========================================================= */
-
-.current-work-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.current-work-item {
-  display: grid;
-
-  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.6fr);
-
-  gap: 4rem;
-
-  padding: 2.5rem 0;
-
-  border-top: 1px solid #dddddd;
-}
-
-.current-work-item:last-child {
-  border-bottom: 1px solid #dddddd;
-}
-
-.current-work-item h3 {
-  font-size: 1.25rem;
-  font-weight: 500;
-
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-}
-
-.current-work-item p {
-  margin: 0;
-
-  color: #444444;
-
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   PUBLICATIONS
-   ========================================================= */
-
-.publication-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.publication {
-  padding: 2rem 0;
-
-  border-top: 1px solid #dddddd;
-}
-
-.publication:last-child {
-  border-bottom: 1px solid #dddddd;
-}
-
-.publication h3 {
-  max-width: 850px;
-
-  margin-bottom: 0.65rem;
-
-  font-size: 1.2rem;
-  font-weight: 500;
-
-  line-height: 1.4;
-  letter-spacing: -0.015em;
-}
-
-.publication-authors,
-.publication-meta {
-  margin-bottom: 0.35rem;
-
-  color: #666666;
-
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-
-.publication-links {
-  display: flex;
-
-  gap: 1rem;
-
-  margin-top: 0.7rem;
-  margin-bottom: 0;
-}
-
-.publication-links a,
-.more-publications a {
-  color: #111111;
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  text-decoration: none;
-
-  border-bottom: 1px solid #bdbdbd;
-}
-
-.publication-links a:hover,
-.more-publications a:hover {
-  border-color: #111111;
-}
-
-.more-publications {
-  margin-top: 2rem;
-}
-
-
-/* =========================================================
-   ABOUT
-   ========================================================= */
-
-#about p {
-  max-width: 760px;
-
-  color: #333333;
-
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-
-/* =========================================================
-   OUTREACH
-   ========================================================= */
-
-#outreach p {
-  max-width: 760px;
-
-  color: #333333;
-
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-#outreach a {
-  color: #111111;
-
-  text-decoration: none;
-
-  border-bottom: 1px solid #bbbbbb;
-}
-
-#outreach a:hover {
-  border-color: #111111;
-}
-
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
-
-.contact-section p {
-  max-width: 600px;
-
-  color: #333333;
-}
-
-.contact-section a {
-  color: #111111;
-
-  text-decoration: none;
-
-  border-bottom: 1px solid #bbbbbb;
-}
-
-.contact-section a:hover {
-  border-color: #111111;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-  margin-top: 5rem;
-
-  padding: 3rem 2rem 2.5rem;
-
-  background: #111111;
-
+.footer-contact a {
   color: #ffffff;
-
-  text-align: center;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  gap: 2rem;
-
-  margin-bottom: 2rem;
-}
-
-.footer-links a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 0.4rem;
-
-  color: #ffffff;
-
-  font-size: 0.78rem;
-  font-weight: 400;
-
   text-decoration: none;
-
-  opacity: 0.82;
-
-  transition: opacity 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-.footer-links a:hover {
-  opacity: 1;
+.footer-contact a:hover {
+  border-color: #ffffff;
 }
 
-.footer-links svg {
-  width: 21px;
-  height: 21px;
-}
-
-footer > p:last-child {
-  margin: 0;
-
-  color: #aaaaaa;
-
-  font-size: 0.78rem;
-}
-
-
-/* =========================================================
-   SELECTION
-   ========================================================= */
-
-::selection {
-  background: #111111;
-  color: #ffffff;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 950px) {
-
-  main {
-    width: min(90%, 900px);
-  }
-
-  .two-column {
-    grid-template-columns: 1fr 280px;
-    gap: 3rem;
-  }
-
-  .research-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .research-item {
-    max-width: 720px;
-  }
-
-  .current-work-item {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  body {
-    font-size: 17px;
-  }
-
-
-  /* Navigation */
-
-  .topbar {
-    height: 60px;
-
-    padding: 0 1.2rem;
-  }
-
-  .topbar-title {
-    font-size: 1.05rem;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .nav {
-    display: none;
-
-    position: absolute;
-
-    top: 60px;
-    left: 0;
-
-    width: 100%;
-
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 0;
-
-    padding: 1rem 1.2rem 1.4rem;
-
-    background: rgba(15, 15, 15, 0.96);
-
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .nav.show {
-    display: flex;
-  }
-
-  .nav a {
-    width: 100%;
-
-    padding: 0.75rem 0;
-
-    font-size: 1rem;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-
-  /* Hero */
-
-  .hero {
-    height: 65vh;
-    min-height: 430px;
-
-    background-attachment: scroll;
-  }
-
-  .hero-bg {
-    background-position: center center;
-  }
-
-  .hero-quote {
-    bottom: 1.3rem;
-
-    width: 88%;
-
-    font-size: 0.92rem;
-  }
-
-
-  /* Main */
-
-  main {
-    width: 88%;
-
-    padding-top: 4rem;
-  }
-
-
-  /* Intro */
-
-  .intro {
-    padding-bottom: 4rem;
-  }
-
-  .two-column {
-    display: flex;
-    flex-direction: column;
-
-    gap: 2.5rem;
-  }
-
-  .two-column .text {
-    max-width: 100%;
-  }
-
-  .intro h1 {
-    font-size: clamp(2.8rem, 14vw, 4.5rem);
-  }
-
-  .lead {
-    font-size: 1.35rem;
-  }
-
-  .two-column .image {
-    width: min(100%, 360px);
-  }
-
-
-  /* Sections */
-
-  .section {
-    padding: 4.5rem 0;
-  }
-
-  .section h2 {
-    font-size: clamp(2.2rem, 11vw, 3.6rem);
-  }
-
-  .section-intro {
-    margin-bottom: 2.8rem;
-
-    font-size: 1.1rem;
-  }
-
-
-  /* Research */
-
-  .research-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* Current Work */
-
-  .current-work-item {
-    grid-template-columns: 1fr;
-
-    gap: 0.7rem;
-
-    padding: 2rem 0;
-  }
-
-
-  /* Footer */
-
-  footer {
-    padding: 2.5rem 1rem;
-  }
-
-  .footer-links {
-    gap: 1.5rem;
-  }
-
-}
-
-
-/* =========================================================
-   VERY SMALL SCREENS
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  main {
-    width: 90%;
-  }
-
-  .intro-links {
-    gap: 0.8rem 1.2rem;
-  }
-
-  .hero {
-    height: 58vh;
-    min-height: 390px;
-  }
-
-}
+/* ========================================================= SELECTION ========================================================= */ ::selection { background: #111111; color: #ffffff; } /* ========================================================= TABLET ========================================================= */ @media (max-width: 950px) { main { width: min(90%, 900px); } .two-column { grid-template-columns: 1fr 280px; gap: 3rem; } .research-grid { grid-template-columns: 1fr; gap: 2.5rem; } .research-item { max-width: 720px; } .current-work-item { grid-template-columns: 1fr; gap: 1rem; } } /* ========================================================= MOBILE ========================================================= */ @media (max-width: 768px) { body { font-size: 17px; } /* Navigation */ .topbar { height: 60px; padding: 0 1.2rem; } .topbar-title { font-size: 1.05rem; } .hamburger { display: block; } .nav { display: none; position: absolute; top: 60px; left: 0; width: 100%; flex-direction: column; align-items: flex-start; gap: 0; padding: 1rem 1.2rem 1.4rem; background: rgba(15, 15, 15, 0.96); border-top: 1px solid rgba(255, 255, 255, 0.12); } .nav.show { display: flex; } .nav a { width: 100%; padding: 0.75rem 0; font-size: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); } /* Hero */ .hero { height: 65vh; min-height: 430px; background-attachment: scroll; } .hero-bg { background-position: center center; } .hero-quote { bottom: 1.3rem; width: 88%; font-size: 0.92rem; } /* Main */ main { width: 88%; padding-top: 4rem; } /* Intro */ .intro { padding-bottom: 4rem; } .two-column { display: flex; flex-direction: column; gap: 2.5rem; } .two-column .text { max-width: 100%; } .intro h1 { font-size: clamp(2.8rem, 14vw, 4.5rem); } .lead { font-size: 1.35rem; } .two-column .image { width: min(100%, 360px); } /* Sections */ .section { padding: 4.5rem 0; } .section h2 { font-size: clamp(2.2rem, 11vw, 3.6rem); } .section-intro { margin-bottom: 2.8rem; font-size: 1.1rem; } /* Research */ .research-grid { grid-template-columns: 1fr; } /* Current Work */ .current-work-item { grid-template-columns: 1fr; gap: 0.7rem; padding: 2rem 0; } /* Footer */ footer { padding: 2.5rem 1rem; } .footer-links { gap: 1.5rem; } } /* ========================================================= VERY SMALL SCREENS ========================================================= */ @media (max-width: 480px) { main { width: 90%; } .intro-links { gap: 0.8rem 1.2rem; } .hero { height: 58vh; min-height: 390px; } }
