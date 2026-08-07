@@ -1,554 +1,931 @@
-/* Import Google Fonts: Inter for headings, Merriweather for body text */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather&display=swap');
-/* Wrap each logical section with a subtle background and spacing */
-.two-column .text h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
-  margin-top: 0;            /* reset top margin inside box */
-  margin-bottom: 0.8rem;    /* space below heading */
-  font-weight: 600;
-  color: #222;
-  line-height: 1.2;
-}
+/* =========================================================
+   MADHUR MEHTA — SINGLE PAGE ACADEMIC SITE
+   ========================================================= */
 
-/* Paragraph spacing */
-.two-column .text p {
-  font-family: 'Merriweather', serif;
-  line-height: 1.8;
-  margin-bottom: 1.2rem;
-  font-size: 1.05rem;
-  color: #333;
-}
 
-/* Section wrapper effect */
-.two-column .text h3 + p,       /* first paragraph after h3 */
-.two-column .text p + h3 {       /* heading after paragraph */
-  margin-top: 1rem;
-}
+/* =========================================================
+   RESET + GLOBAL TYPOGRAPHY
+   ========================================================= */
 
-/* Add subtle background and padding to each section */
-.two-column .text h3 {
-  padding: 0.4rem 0.6rem;
-  background-color: rgba(240, 240, 240, 0.6); /* light gray box */
-  border-left: 4px solid #888;                 /* accent line */
-  border-radius: 6px;
-}
-
-/* Slight spacing around each section */
-.two-column .text p:first-of-type {
-  margin-top: 1rem;
-}
-
-.two-column .text p:last-of-type {
-  margin-bottom: 2rem;
-}
-
-/* Limit width for readability */
-.two-column .text {
-  max-width: 70ch;
-}
-
-.two-column {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-.two-column .text {
-  flex: 2;
-}
-
-.two-column .image {
-  flex: 1;
-  font-family: 'Merriweather', serif;
-}
-
-.two-column img {
-  width: 100%;
-  height: auto;
-  border-radius: 16px; /* increase from 8px to soften more */
-  object-fit: cover;   /* ensures image scales nicely */
-}
-
-/* Reset default margin/padding and set box-sizing to border-box for easier layout control */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-#greeting {
-  color: black;           /* Visible on hero background */
-  font-size: 2rem;        /* Match hero overlay style */
-  text-align: center;
-  margin: 0.5rem 0;
-  opacity: 1;             /* Initial opacity */
+
+html {
+  scroll-behavior: smooth;
 }
 
-/* Base styles for html and body */
-html, body {
-  margin: 0;                  /* Remove default margin */
-  padding: 0;                 /* Remove default padding */
-  overflow-x: hidden;         /* Prevent horizontal scroll */
-  background: white;          /* Set default background */
-  font-family: Georgia, serif; /* Default font for body text */
-  font-size: 18px;            /* Base font size */
-  line-height: 1.6;           /* Comfortable line height */
-  color: black;               /* Default text color */
-  width: 100%;                /* Ensure body spans full width */
-}
-
-/* Hero Sections: common styles for all hero variants */
-.hero, .hero2, .hero3, .hero4, .hero5 {
-  position: relative;         /* Relative for positioning overlay inside */
-  height: 60vh;              /* Full viewport height */
-  background-attachment: fixed; /* Parallax effect */
-  background-size: cover;     /* Cover entire hero area */
-  background-position: center; /* Center the image */
-  padding: 0;
-  margin-top: -20px;          /* Adjust hero position (can be tweaked for fixed nav) */
-  z-index: 0;                 /* Default stacking below overlay */
-  overflow: hidden;           /* Prevent overflow of child elements */
-}
-
-/* Individual hero background images */
-.hero { background: url('cosmos-wormhole-5200x3250-9652.jpg') no-repeat center center/cover; }
-.hero2 { background: url('about.jpg') no-repeat center center/cover; }
-.hero3 { background: url('research.jpg') no-repeat center center/cover; }
-.hero4 { background: url('blog2.jpg') no-repeat center center/cover; }
-.hero5 { background: url('notes.jpg') no-repeat center center/cover; }
-
-/* Overlay inside hero sections: for text and content */
-.hero .overlay, .hero2 .overlay, .hero3 .overlay, .hero4 .overlay, .hero5 .overlay {
-  position: relative;         /* Position relative for stacking content */
-  z-index: 1;                 /* Place above background */
-  text-align: center;         /* Center the text */
-  color: white;               /* Text color */
-  padding: 2rem;              /* Spacing inside overlay */
-  font-family: 'Inter', sans-serif; /* Font for headings/overlay */
-  font-size: 2rem;            /* Large font size for hero text */
-}
-
-/* Pseudo-element for overlay (can be used for shading or effects) */
-.hero::after, .hero2::after, .hero3::after, .hero4::after {
-  content: "";                /* Empty content for decorative purposes */
-  position: absolute;         /* Absolute positioning covers hero */
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0); /* Transparent by default */
-  z-index: 1;                 /* Place above hero background but below content if needed */
-}
-.hero-quote {
-  position: absolute;
-  bottom: 0;
+body {
   width: 100%;
-  padding: 1rem;
-  text-align: center;
-  z-index: 2; /* Make it appear above overlay */
-  color: white; /* Ensure text is visible */
-  font-style: italic; /* Optional styling */
-  font-size: 1.5rem; /* Adjust for readability */
-  background: rgba(0, 0, 0, 0.4); /* Optional: semi-transparent background for contrast */
+  overflow-x: hidden;
+
+  background: #ffffff;
+  color: #111111;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.65;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  margin-bottom: 1.15rem;
 }
 
 
-/* Top Navigation Bar */
+/* =========================================================
+   TOP NAVIGATION
+   ========================================================= */
+
 .topbar {
-  position: fixed;            /* Stick to top */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;                /* Full width */
-  height: 60px;               /* Fixed height */
-  display: flex;              /* Flex layout for title and nav */
-  align-items: center;        /* Vertical alignment */
-  justify-content: space-between; /* Space between title and links */
-  padding: 0 2rem;            /* Horizontal padding */
-  background: rgba(40, 40, 40, 0.3); /* Semi-transparent dark background */
-  backdrop-filter: blur(10px) saturate(150%); /* Blur and saturate behind nav */
-  color: white;               /* Text color */
-  font-family: 'Inter', sans-serif; /* Font for nav */
-  font-weight: 500;
-  z-index: 1000;              /* Ensure nav stays on top of other content */
-  border-radius: 12px;        /* Rounded corners */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle bottom border */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-}
 
-/* Topbar title link */
-.topbar-title {
-  font-size: 1.5rem;          /* Larger font for site title */
-  text-decoration: none;       /* Remove underline */
-  color: white;                /* White text */
-  font-family: 'Inter', sans-serif;
-}
-
-/* Hover effect for topbar title */
-.topbar-title:hover {
-  color: #ccc;                /* Slight color change on hover */
-}
-
-/* Navigation menu container */
-.nav {
-  margin-left: auto;           /* Push nav to right */
-  display: flex;               /* Horizontal layout */
-  align-items: center;         /* Vertical alignment */
-  padding-right: 0.5rem;       /* Spacing on right */
-}
-
-/* Navigation links */
-.nav a {
-  color: white;               /* Link color */
-  text-decoration: none;      /* Remove underline */
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;           /* Bold links */
-  font-size: 1rem;            /* Font size for nav links */
-  margin: 0 1rem;             /* Horizontal spacing between links */
-}
-
-/* Nav link hover effect */
-.nav a:hover {
-  color: #ccc;                /* Lighten color on hover */
-}
-
-/* Main content layout */
-main {
   width: 100%;
-  max-width: 80%;           /* Limit content width */
-  padding: 2rem 1rem;         /* Inner padding */
-  margin: 0 auto;             /* Center main content */
-  box-sizing: border-box;
-  word-wrap: break-word;      /* Prevent overflow from long words */
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 2.5rem;
+
+  background: rgba(20, 20, 20, 0.42);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  z-index: 1000;
 }
 
-/* Footer container */
-footer {
-  background: #1a1a1a;        /* Dark footer background */
-  color: white;               /* White text */
-  text-align: center;         /* Centered text */
-  padding: 1rem;              /* Padding inside footer */
-  margin-top: 2rem;           /* Space above footer */
-}
+.topbar-title {
+  color: #ffffff;
 
-/* Footer links container */
-.footer-links {
-  display: flex;              /* Flex layout for icons */
-  justify-content: center;    /* Center horizontally */
-  flex-wrap: wrap;            /* Wrap on small screens */
-  gap: 2rem;                  /* Space between items */
-  margin-top: 0.5rem;
-}
-
-/* Individual footer links */
-.footer-links a {
-  color: white;               /* Link color */
-  text-decoration: none;      /* Remove underline */
-  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
   font-weight: 500;
-  font-size: 0.85rem;         /* Smaller text */
-  display: flex;              /* For icon + text */
-  flex-direction: column;     /* Stack icon above text */
-  align-items: center;        /* Center icon/text */
+  letter-spacing: -0.02em;
+
+  text-decoration: none;
 }
 
-/* Footer link hover effect */
-.footer-links a:hover {
-  color: #ccc;
+.topbar-title:hover {
+  opacity: 0.72;
 }
 
-/* Footer icons size */
-.footer-links i {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 4px;          /* Space between icon and text */
+.nav {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
 }
 
-/* Grid layout for blog and research sections */
-.blog-grid, .research-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
-  row-gap: -1rem;             /* Vertical spacing between items */
-  column-gap: 2rem;           /* Horizontal spacing */
-  padding: 1rem;              /* Inner padding */
+.nav a {
+  color: #ffffff;
+
+  font-size: 0.92rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: opacity 0.2s ease;
 }
 
-/* Individual blog or research card */
-.blog-card,
-.research-card {
-  background: #f7f7f7;        /* Light grey background */
-  padding: 2rem 2.5rem;       /* Inner spacing */
-  border-radius: 12px;        /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Shadow for depth */
-  cursor: pointer;            /* Pointer on hover */
-  position: relative;         /* Relative positioning for overlay effects */
-  transition: transform 0.3s ease; /* Smooth transform animations */
-  overflow: hidden;           /* Hide overflow */
-  margin: 2rem auto;          /* Center horizontally with vertical spacing */
+.nav a:hover {
+  opacity: 0.65;
 }
 
-/* Expanded card view */
-.blog-card.expanded,
-.research-card.expanded {
-  position: fixed;            /* Overlay above page */
-  top: 5%;                    /* Vertical placement */
-  left: 7.5%;                 /* Horizontal placement */
-  right: 7.5%;
-  width: 85%;                 /* Card width */
-  height: 90%;                /* Card height */
-  overflow-y: auto;           /* Scroll if content overflows */
-  backgroundcolor: white;      /* Card background */
-  z-index: 1001;              /* On top of other elements */
-  padding: 3rem;              /* Inner spacing */
-  border-radius: 16px;        /* Rounded corners */
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Larger shadow */
-}
 
-/* Blog and research snippets inside cards */
-.blog-snippet, .research-snippet {
-  font-size: 1rem;        /* Standard readable font size */
-  color: #444;            /* Dark gray text for readability */
-}
+/* =========================================================
+   MOBILE HAMBURGER
+   ========================================================= */
 
-/* Full content inside cards, hidden by default */
-.blog-full-content, .research-full-content {
-  display: none;          /* Hide full content until card is expanded */
-}
-
-/* When a card is expanded, hide the snippet */
-.blog-card.expanded .blog-snippet,
-.research-card.expanded .research-snippet {
-  display: none;          /* Hide preview text when expanded */
-}
-
-/* Show full content when card is expanded */
-.blog-card.expanded .blog-full-content,
-.research-card.expanded .research-full-content {
-  display: block;         /* Display full content */
-  margin-top: 2rem;       /* Add spacing above full content */
-}
-
-/* Overlay background for expanded cards */
-#blog-overlay, #research-overlay {
-  display: none;                  /* Hidden by default */
-  position: fixed;                /* Cover entire viewport */
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;   /* Full width and height */
-  background: rgba(0,0,0,0.7);   /* Semi-transparent black overlay */
-  z-index: 1000;                  /* Place above page but below expanded card */
-}
-
-/* Card titles typography */
-.blog-title, .research-title {
-  font-size: 1.5rem;           /* Large title size */
-  font-family: 'Inter', sans-serif; /* Use Inter for headings */
-  font-weight: 600;            /* Bold */
-  margin-bottom: 0.5rem;       /* Space below title */
-}
-
-/* Publication card style */
-.pub-card {
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-  border-left: 5px solid #ccc; /* Accent line on left */
-  padding: 1.5rem;             /* Inner padding */
-  margin: 2rem 0;              /* Vertical spacing between cards */
-  border-radius: 8px;          /* Rounded corners */
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06); /* Subtle shadow for depth */
-}
-
-/* Publication title inside pub-card */
-.pub-card h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;           /* Slightly smaller than blog/research titles */
-  margin-bottom: 0.5rem;       /* Space below title */
-}
-
-/* Publication description text */
-.pub-card p {
-  font-size: 1rem;              /* Standard font size */
-  color: #444;                  /* Dark gray text */
-  margin-bottom: 1rem;          /* Space below paragraph */
-}
-
-/* Ordered lists inside pub-card */
-.pub-card ol {
-  padding-left: 1.2rem;         /* Indent list items */
-}
-
-/* List items spacing */
-.pub-card li {
-  margin-bottom: 0.6rem;        /* Space between list items */
-  line-height: 1.5;             /* Comfortable line height */
-}
-
-/* Hamburger menu button (mobile) */
 .hamburger {
-  display: none;                 /* Hidden on desktop */
-  font-size: 2rem;               /* Large clickable icon */
-  background: none;              /* No background */
-  border: none;                  /* No border */
-  color: white;                  /* White icon */
-  cursor: pointer;               /* Pointer cursor */
-  z-index: 1001;                 /* Above most elements */
+  display: none;
+
+  margin-left: auto;
+
+  background: none;
+  border: none;
+
+  color: #ffffff;
+  font-size: 1.7rem;
+
+  cursor: pointer;
 }
 
-/* Mobile styles for screens smaller than 768px */
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  height: 78vh;
+  min-height: 520px;
+
+  overflow: hidden;
+
+  background:
+    url("cosmos-wormhole-5200x3250-9652.jpg")
+    no-repeat
+    center center / cover;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    url("cosmos-wormhole-5200x3250-9652.jpg")
+    no-repeat
+    center center / cover;
+
+  transform: scale(1);
+  transition: transform 0.1s ease-out;
+
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.12) 55%,
+      rgba(0, 0, 0, 0.58)
+    );
+
+  z-index: 1;
+}
+
+.hero .overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-quote {
+  position: absolute;
+
+  left: 50%;
+  bottom: 2rem;
+
+  width: min(90%, 900px);
+
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 1.15rem;
+  font-weight: 300;
+  font-style: italic;
+
+  z-index: 3;
+}
+
+.hero-quote p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+main {
+  width: min(1180px, 88%);
+
+  margin: 0 auto;
+
+  padding: 6rem 0 2rem;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro {
+  padding-bottom: 6rem;
+}
+
+.two-column {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(260px, 0.75fr);
+
+  gap: 5rem;
+
+  align-items: start;
+}
+
+.two-column .text {
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin-bottom: 1.1rem;
+
+  color: #666666;
+
+  font-size: 0.86rem;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin-bottom: 1.6rem;
+
+  font-size: clamp(3rem, 7vw, 5.7rem);
+  font-weight: 400;
+
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.lead {
+  max-width: 650px;
+
+  margin-bottom: 1.6rem;
+
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.intro .text > p:not(.eyebrow):not(.lead) {
+  max-width: 650px;
+
+  color: #333333;
+}
+
+
+/* =========================================================
+   INTRO LINKS
+   ========================================================= */
+
+.intro-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.75rem 1.5rem;
+
+  margin-top: 2rem;
+}
+
+.intro-links a {
+  color: #111111;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #bbbbbb;
+
+  transition:
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.intro-links a:hover {
+  border-color: #111111;
+}
+
+
+/* =========================================================
+   PORTRAIT
+   ========================================================= */
+
+.two-column .image {
+  width: 100%;
+}
+
+.two-column .image img {
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+}
+
+.two-column .image p {
+  margin-top: 1rem;
+
+  color: #555555;
+
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.two-column .image a {
+  color: #111111;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #cccccc;
+}
+
+.two-column .image a:hover {
+  border-color: #111111;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.section {
+  scroll-margin-top: 90px;
+
+  padding: 6rem 0;
+
+  border-top: 1px solid #dddddd;
+}
+
+.section-number {
+  margin-bottom: 0.65rem;
+
+  color: #888888;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
+}
+
+.section h2 {
+  margin-bottom: 2rem;
+
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 400;
+
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.section-intro {
+  max-width: 760px;
+
+  margin-bottom: 3.5rem;
+
+  color: #333333;
+
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   RESEARCH
+   ========================================================= */
+
+.research-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 3.5rem;
+}
+
+.research-item {
+  padding-top: 1.4rem;
+
+  border-top: 1px solid #bbbbbb;
+}
+
+.research-item h3 {
+  margin-bottom: 1rem;
+
+  font-size: 1.28rem;
+  font-weight: 500;
+
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.research-item p {
+  color: #444444;
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CURRENT WORK
+   ========================================================= */
+
+.current-work-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-work-item {
+  display: grid;
+
+  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.6fr);
+
+  gap: 4rem;
+
+  padding: 2.5rem 0;
+
+  border-top: 1px solid #dddddd;
+}
+
+.current-work-item:last-child {
+  border-bottom: 1px solid #dddddd;
+}
+
+.current-work-item h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.current-work-item p {
+  margin: 0;
+
+  color: #444444;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PUBLICATIONS
+   ========================================================= */
+
+.publication-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.publication {
+  padding: 2rem 0;
+
+  border-top: 1px solid #dddddd;
+}
+
+.publication:last-child {
+  border-bottom: 1px solid #dddddd;
+}
+
+.publication h3 {
+  max-width: 850px;
+
+  margin-bottom: 0.65rem;
+
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+.publication-authors,
+.publication-meta {
+  margin-bottom: 0.35rem;
+
+  color: #666666;
+
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.publication-links {
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: 0.7rem;
+  margin-bottom: 0;
+}
+
+.publication-links a,
+.more-publications a {
+  color: #111111;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.publication-links a:hover,
+.more-publications a:hover {
+  border-color: #111111;
+}
+
+.more-publications {
+  margin-top: 2rem;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+#about p {
+  max-width: 760px;
+
+  color: #333333;
+
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   OUTREACH
+   ========================================================= */
+
+#outreach p {
+  max-width: 760px;
+
+  color: #333333;
+
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+#outreach a {
+  color: #111111;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #bbbbbb;
+}
+
+#outreach a:hover {
+  border-color: #111111;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-section p {
+  max-width: 600px;
+
+  color: #333333;
+}
+
+.contact-section a {
+  color: #111111;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #bbbbbb;
+}
+
+.contact-section a:hover {
+  border-color: #111111;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  margin-top: 5rem;
+
+  padding: 3rem 2rem 2.5rem;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 2rem;
+
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.4rem;
+
+  color: #ffffff;
+
+  font-size: 0.78rem;
+  font-weight: 400;
+
+  text-decoration: none;
+
+  opacity: 0.82;
+
+  transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-links svg {
+  width: 21px;
+  height: 21px;
+}
+
+footer > p:last-child {
+  margin: 0;
+
+  color: #aaaaaa;
+
+  font-size: 0.78rem;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: #111111;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  main {
+    width: min(90%, 900px);
+  }
+
+  .two-column {
+    grid-template-columns: 1fr 280px;
+    gap: 3rem;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .research-item {
+    max-width: 720px;
+  }
+
+  .current-work-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 768px) {
-  /* Topbar adjustments for mobile */
+
+  body {
+    font-size: 17px;
+  }
+
+
+  /* Navigation */
+
   .topbar {
-    flex-direction: column;      /* Stack title and nav vertically */
-    align-items: flex-start;     /* Align to left */
-    height: auto;                /* Allow flexible height */
-    padding: 1rem;               /* Padding inside topbar */
+    height: 60px;
+
+    padding: 0 1.2rem;
   }
 
   .topbar-title {
-    font-size: 1.2rem;           /* Slightly smaller title on mobile */
-    margin-bottom: 0.5rem;       /* Space below title */
+    font-size: 1.05rem;
   }
 
-  /* Mobile Navigation Menu */
-.nav {
-    display: none;               /* Hide navigation links by default on mobile */
-    flex-direction: column;      /* Stack links vertically */
-    align-items: flex-start;     /* Align links to the left */
-    background: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background for mobile menu */
-    position: absolute;          /* Position relative to top-right corner of viewport */
-    top: 60px;                   /* Position menu below topbar (60px height) */
-    right: 0;                     /* Align to right edge */
-    width: 100%;                 /* Full width for mobile menu */
-    padding: 1rem;               /* Inner spacing */
-    z-index: 1000;               /* Above page content */
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+
+    position: absolute;
+
+    top: 60px;
+    left: 0;
+
+    width: 100%;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0;
+
+    padding: 1rem 1.2rem 1.4rem;
+
+    background: rgba(15, 15, 15, 0.96);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav a {
+    width: 100%;
+
+    padding: 0.75rem 0;
+
+    font-size: 1rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+
+  /* Hero */
+
+  .hero {
+    height: 65vh;
+    min-height: 430px;
+
+    background-attachment: scroll;
+  }
+
+  .hero-bg {
+    background-position: center center;
+  }
+
+  .hero-quote {
+    bottom: 1.3rem;
+
+    width: 88%;
+
+    font-size: 0.92rem;
+  }
+
+
+  /* Main */
+
+  main {
+    width: 88%;
+
+    padding-top: 4rem;
+  }
+
+
+  /* Intro */
+
+  .intro {
+    padding-bottom: 4rem;
+  }
+
+  .two-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.5rem;
+  }
+
+  .two-column .text {
+    max-width: 100%;
+  }
+
+  .intro h1 {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+
+  .lead {
+    font-size: 1.35rem;
+  }
+
+  .two-column .image {
+    width: min(100%, 360px);
+  }
+
+
+  /* Sections */
+
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .section h2 {
+    font-size: clamp(2.2rem, 11vw, 3.6rem);
+  }
+
+  .section-intro {
+    margin-bottom: 2.8rem;
+
+    font-size: 1.1rem;
+  }
+
+
+  /* Research */
+
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Current Work */
+
+  .current-work-item {
+    grid-template-columns: 1fr;
+
+    gap: 0.7rem;
+
+    padding: 2rem 0;
+  }
+
+
+  /* Footer */
+
+  footer {
+    padding: 2.5rem 1rem;
+  }
+
+  .footer-links {
+    gap: 1.5rem;
+  }
+
 }
 
-/* Show navigation when hamburger menu is toggled */
-.nav.show {
-    display: flex;               /* Switch display to flex when active */
-}
 
-/* Navigation links inside mobile menu */
-.nav a {
-    font-size: 1rem;             /* Readable font size */
-    color: white;                /* White text on dark background */
-    margin: 0.5rem 0;            /* Vertical spacing between links */
-}
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
 
-/* Hamburger button for mobile menu */
-.hamburger {
-    display: block;              /* Make hamburger visible on mobile */
-    position: absolute;          /* Position relative to topbar */
-    right: 1.5rem;               /* Distance from right edge */
-    top: 1rem;                   /* Distance from top edge */
-}
+@media (max-width: 480px) {
 
-/* Reduce hero section height and disable parallax on mobile */
-.hero, .hero2, .hero3, .hero4, .hero5 {
-    height: 60vh;                /* Shorter hero sections for smaller screens */
-    background-attachment: scroll; /* Disable fixed background (no parallax) */
-}
+  main {
+    width: 90%;
+  }
 
-/* Main content adjustments on mobile */
-main {
-    padding: 1rem;               /* Less padding for smaller screens */
-}
+  .intro-links {
+    gap: 0.8rem 1.2rem;
+  }
 
-/* Footer links adjustments on mobile */
-.footer-links {
-    flex-direction: column;      /* Stack footer links vertically */
-    gap: 1rem;                   /* Spacing between links */
-}
+  .hero {
+    height: 58vh;
+    min-height: 390px;
+  }
 
-/* Adjust expanded blog/research cards on mobile */
-.blog-card.expanded, .research-card.expanded {
-    top: 5%;                     /* Small offset from top */
-    left: 5%;                    /* Small offset from left */
-    right: 5%;                   /* Small offset from right */
-    width: 80%;                  /* Narrower width on mobile */
-    height: 80%;                 /* Shorter height on mobile */
-}
-
-/* Reduce padding inside publication cards on mobile */
-.pub-card {
-    padding: 1rem;              
-}
-
-/* Adjust blog/research card titles on mobile */
-.blog-title, .research-title {
-    font-size: 1.3rem;           /* Slightly smaller titles */
-}
-
-/* Hero section base styling */
-.hero {
-    position: relative;           /* Required for absolute background and overlay */
-    height: 100vh;                /* Full viewport height */
-    overflow: hidden;             /* Hide overflowing content */
-    margin-top: -40px;            /* Pull hero up under the fixed topbar */
-}
-
-/* Hero background image */
-.hero-bg {
-    position: absolute;           /* Absolute positioning for full coverage */
-    top: 0; left: 0;              /* Top-left corner */
-    width: 100%; height: 100%;    /* Full width and height */
-    background: url('cosmos-wormhole-5200x3250-9652.jpg') no-repeat center center/cover; /* Hero image */
-    background-size: cover;       /* Cover entire hero area */
-    transform: scale(1);          /* Initial scale for scroll zoom effect */
-    transition: transform 0.1s ease-out; /* Smooth zoom on scroll */
-    z-index: 0;                   /* Behind overlay content */
-}
-
-/* Hero overlay content (text, buttons, etc.) */
-.hero .overlay {
-    position: relative;           /* Relative positioning */
-    z-index: 1;                   /* Ensure overlay appears above background */
-    text-align: center;           /* Center text horizontally */
-    color: white;                 /* White text color */
-    padding: 2rem;                /* Inner spacing for overlay */
-}
-
-/* Hero sections 2-5 with respective background images */
-.hero2 { position: relative; height: 100vh; overflow: hidden; margin-top: -40px; }
-.hero2-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('about.jpg') no-repeat center center/cover; background-size: cover; transition: transform 0.1s ease-out; z-index: 0; }
-.hero2 .overlay { position: relative; z-index: 1; text-align: center; color: white; padding: 3rem 1rem; font-family: 'Inter', sans-serif; font-size: 2rem; }
-
-.hero3 { position: relative; height: 100vh; overflow: hidden; margin-top: -40px; }
-.hero3-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('research.jpg') no-repeat center center/cover; background-size: cover; transition: transform 0.1s ease-out; z-index: 0; }
-.hero3 .overlay { position: relative; z-index: 1; text-align: center; color: white; padding: 3rem 1rem; font-family: 'Inter', sans-serif; font-size: 2rem; }
-
-.hero4 { position: relative; height: 100vh; overflow: hidden; margin-top: -40px; }
-.hero4-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('blog2.jpg') no-repeat center center/cover; background-size: cover; transform: scale(1); transition: transform 0.1s ease-out; z-index: 0; }
-.hero4 .overlay { position: relative; z-index: 1; text-align: center; color: white; padding: 2rem; }
-
-.hero5 { position: relative; height: 100vh; overflow: hidden; margin-top: -40px; }
-.hero5-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('notes.jpg') no-repeat center center/cover; background-size: cover; transform: scale(1); transition: transform 0.1s ease-out; z-index: 0; }
-.hero5 .overlay { position: relative; z-index: 1; text-align: center; color: white; padding: 2rem; }
-
-/* Paragraph styling */
-p {
-    line-height: 1.7;            /* Improve readability */
-    margin-bottom: 1.2rem;       /* Space between paragraphs */
-}
-
-
-  /* Improve readability of the main text column */
-.two-column .text {
-  max-width: 65ch;          /* optimal reading width */
-}
-
-/* Section headings */
-.two-column h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
-  margin-top: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Paragraph spacing */
-.two-column p {
-  margin-bottom: 1.2rem;
-}
-
-/* Small spacing under your name/title */
-.two-column h2 {
-  margin-bottom: 0.6rem;
-}
-  /* Increase main content spacing */
-main {
-  padding: 4rem 2rem; /* increase top/bottom and left/right padding */
 }
