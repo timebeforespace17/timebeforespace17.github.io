@@ -1,210 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Madhur Mehta</title>
+
   <link rel="stylesheet" href="style.css">
+
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
 
-<header class="topbar">
-  <h1 class="topbar-title">Madhur Mehta</h1>
- <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
 
-  <nav class="nav" id="mobileNav">
-    <a href="rnw.html">Research & Writing</a>
-  </nav>
-</header>
+  <header class="topbar">
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="overlay">
-  </div>
-  <div class="hero-quote">
-    <p>“Nature is mysterious, surprising, and yet comfortingly simple...”</p>
-  </div>
-</section>
-  
-<main>
-<h2 id="greeting">Madhur Mehta</h2>
-  <div class="two-column">
-  <div class="text">
+    <a href="#top" class="topbar-title">
+      Madhur Mehta
+    </a>
 
-    
-    
+    <button
+      class="hamburger"
+      onclick="toggleMenu()"
+      aria-label="Toggle navigation"
+    >
+      ☰
+    </button>
 
-    <h3>Research</h3>
-<p>
-  I am a postdoctoral researcher working at the intersection of <strong>classical general relativity, effective field theory, and strong-field black hole physics</strong>.
-</p>
+    <nav class="nav" id="mobileNav">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#about">About</a>
+      <a href="#outreach">Outreach</a>
 
-<p>
-  My research focuses on developing <strong>computational and conceptual frameworks</strong> to understand how compact objects respond to external perturbations, with particular emphasis on <strong>spinning (Kerr) black holes</strong> across extremal, near-extremal, and generic regimes. I use tools from black hole perturbation theory—especially Teukolsky-based methods—together with <strong>effective field theory (EFT)</strong> and <strong>horizon-based descriptions</strong> (such as the membrane paradigm and holographic approaches) to characterize <strong>tidal interactions, dissipation, and observable signatures in gravitational waves</strong>.
-</p>
+      <!-- TODO:
+           Replace with the actual location of your CV.
+      -->
+      <a href="Madhur_Mehta_CV.pdf" target="_blank">CV</a>
+    </nav>
 
-<p>
-  A central theme of my work is to identify <strong>robust, gauge-invariant observables</strong>—such as response functions, fluxes, and horizon quantities—that can be used to probe both <strong>classical GR dynamics</strong> and <strong>possible deviations from it</strong>, including higher-derivative corrections and beyond-GR effects.
-</p>
-
-<p>
-  I am also interested in how these macroscopic descriptions connect to more microscopic or string-theoretic constructions of compact objects, including <strong>microstate geometries and brane-based models</strong>, with the goal of understanding how fundamental structure may manifest in <strong>strong-field gravitational observables</strong>.
-</p>
-
-<p>
-  More broadly, my work aims to build a unified framework linking:
-</p>
-
-<ul>
-  <li>black hole perturbation theory (Teukolsky formalism),</li>
-  <li>effective descriptions of compact objects (EFT),</li>
-  <li>horizon dynamics and dissipation,</li>
-  <li>and potential ultraviolet completions of gravity.</li>
-</ul>
-
-<p>
-  This approach enables the study of a wide range of problems, from <strong>tidal effects and EMRIs</strong> to <strong>extremal black hole physics and precision tests of general relativity with gravitational waves</strong>.
-</p>
-
-<h3>Background</h3>
-<p>
-  I completed my PhD at The Ohio State University, where my research focused on the thermodynamics of black holes and horizonless Extremely Compact Objects (ECOs), demonstrating the universality of black hole thermodynamics, analyzing black hole microstates via two-dimensional CFT and conformal perturbation theory, and studying the implications of horizonless microstructure for the information paradox.
-  <li>
-  <b>PhD Thesis</b> — The Ohio State University (2025)  
-  <a href="papers/Through the Horizon and Back-Lifting the Veil on Black Hole Thermodynamics.pdf" target="_blank">[PDF]</a>
-</li>
-</p>
+  </header>
 
 
-    <p>
-      I am originally from Jaipur, India, and received my 
-      integrated B.S.–M.S. degree in Physics from IISER Bhopal.
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+
+  <section class="hero" id="top">
+
+    <div class="hero-bg"></div>
+    <div class="overlay"></div>
+
+    <div class="hero-quote">
+      <p>
+        “Nature is mysterious, surprising, and yet comfortingly simple...”
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       INTRODUCTION
+       ========================================================= -->
+
+  <main>
+
+    <section class="intro">
+
+      <div class="two-column">
+
+        <div class="text">
+
+          <p class="eyebrow">
+            Heising–Simons Postdoctoral Fellow · UC Santa Barbara
+          </p>
+
+          <h1>Madhur Mehta</h1>
+
+          <p class="lead">
+            I am a theoretical physicist studying
+            <strong>black holes, gravitational waves, and effective field theory</strong>.
+          </p>
+
+          <p>
+            My research focuses on how black holes respond to perturbations
+            and how strong-field dynamics can be encoded in observable quantities
+            such as scattering amplitudes, tidal response, dissipation, and
+            gravitational-wave signals.
+          </p>
+
+          <div class="intro-links">
+
+            <!-- TODO:
+                 Add / verify links.
+            -->
+
+            <a href="mailto:madhur.time17@gmail.com">
+              Email
+            </a>
+
+            <a href="Madhur_Mehta_CV.pdf" target="_blank">
+              CV
+            </a>
+
+            <!-- TODO: Add INSPIRE profile -->
+            <a href="#" target="_blank">
+              INSPIRE
+            </a>
+
+            <!-- TODO: Add arXiv author profile -->
+            <a href="#" target="_blank">
+              arXiv
+            </a>
+
+            <!-- TODO: Add Google Scholar profile if desired -->
+            <a href="#" target="_blank">
+              Google Scholar
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="image">
+
+          <img
+            src="Madhur.jpeg"
+            alt="Portrait of Madhur Mehta"
+          >
+
+          <p>
+            <strong>
+              <a
+                href="http://www.qurios.caltech.edu/#fellowship"
+                target="_blank"
+              >
+                Heising–Simons Postdoctoral Fellow
+              </a>
+            </strong>
+            <br>
+            University of California, Santa Barbara
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         RESEARCH
+         ======================================================= -->
+
+    <section id="research" class="section">
+
+      <p class="section-number">01</p>
+
+      <h2>Research</h2>
+
+      <p class="section-intro">
+        I study how compact objects respond to their environments and how
+        that response can reveal both the dynamics of general relativity
+        and possible new physics.
+      </p>
+
+
+      <div class="research-grid">
+
+        <article class="research-item">
+
+          <h3>Black-hole response</h3>
+
+          <p>
+            I use black-hole perturbation theory and effective field theory
+            to characterize the response of compact objects to external
+            perturbations, including tidal interactions, scattering,
+            absorption, and dissipation.
+          </p>
+
+          <!-- TODO:
+               Add 1–2 sentences describing your cavity EFT /
+               gravitational response function program after you
+               settle on the wording.
+          -->
+
+        </article>
+
+
+        <article class="research-item">
+
+          <h3>Black-hole perturbation theory</h3>
+
+          <p>
+            I am interested in perturbations of Schwarzschild and Kerr
+            black holes, with particular emphasis on gauge-invariant
+            observables, horizon dynamics, and finite-frequency response.
+          </p>
+
+          <!-- TODO:
+               Add your preferred description of current
+               Schwarzschild / Kerr work.
+          -->
+
+        </article>
+
+
+        <article class="research-item">
+
+          <h3>Quantum structure & strong-field observables</h3>
+
+          <p>
+            A broader goal of my work is to understand whether microscopic
+            modifications of classical black holes can leave observable
+            signatures in gravitational-wave or scattering experiments.
+          </p>
+
+          <p>
+            My earlier work studied black-hole microstates, horizonless
+            extremely compact objects, and black-hole thermodynamics using
+            tools from string theory and conformal field theory.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CURRENT WORK
+         ======================================================= -->
+
+    <section id="current-work" class="section">
+
+      <p class="section-number">02</p>
+
+      <h2>Current Work</h2>
+
+      <div class="current-work-list">
+
+        <article class="current-work-item">
+
+          <h3>
+            Effective descriptions of black-hole response
+          </h3>
+
+          <p>
+            <!-- TODO:
+                 Add 2–3 concise sentences describing the
+                 cavity EFT / finite-radius response project.
+            -->
+            [Add description]
+          </p>
+
+        </article>
+
+
+        <article class="current-work-item">
+
+          <h3>
+            Schwarzschild and Kerr perturbations
+          </h3>
+
+          <p>
+            <!-- TODO:
+                 Add 2–3 concise sentences describing your
+                 current perturbation-theory work.
+            -->
+            [Add description]
+          </p>
+
+        </article>
+
+
+        <article class="current-work-item">
+
+          <h3>
+            Gravitational-wave signatures
+          </h3>
+
+          <p>
+            <!-- TODO:
+                 Add your preferred description of how
+                 response / modified compact-object physics
+                 connects to waveform observables.
+            -->
+            [Add description]
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         PUBLICATIONS
+         ======================================================= -->
+
+    <section id="publications" class="section">
+
+      <p class="section-number">03</p>
+
+      <h2>Selected Publications</h2>
+
+      <p class="section-intro">
+        Selected work on black holes, gravitational response,
+        quantum structure, and strong-field gravity.
+      </p>
+
+
+      <div class="publication-list">
+
+        <!-- ===================================================
+             TODO:
+             Put your newest / most relevant work FIRST.
+             Suggested ordering:
+
+             1. Cavity EFT paper
+             2. Other current black-hole / gravitational work
+             3. ECO thermodynamics
+             4. D1-D5 / microstate work
+
+             Do NOT organize this primarily by chronology if you
+             want the page to emphasize your current program.
+             =================================================== -->
+
+
+        <article class="publication">
+
+          <h3>
+            <!-- TODO: Cavity EFT title -->
+            [2026 paper title]
+          </h3>
+
+          <p class="publication-authors">
+            <!-- TODO -->
+            [Authors]
+          </p>
+
+          <p class="publication-meta">
+            <!-- TODO -->
+            [Journal / arXiv / year]
+          </p>
+
+          <p class="publication-links">
+            <a href="#" target="_blank">arXiv</a>
+            <a href="#" target="_blank">PDF</a>
+          </p>
+
+        </article>
+
+
+        <article class="publication">
+
+          <h3>
+            <!-- TODO -->
+            [Selected publication]
+          </h3>
+
+          <p class="publication-authors">
+            [Authors]
+          </p>
+
+          <p class="publication-meta">
+            [Journal / arXiv / year]
+          </p>
+
+          <p class="publication-links">
+            <a href="#" target="_blank">arXiv</a>
+            <a href="#" target="_blank">PDF</a>
+          </p>
+
+        </article>
+
+
+        <article class="publication">
+
+          <h3>
+            <!-- TODO -->
+            [Selected publication]
+          </h3>
+
+          <p class="publication-authors">
+            [Authors]
+          </p>
+
+          <p class="publication-meta">
+            [Journal / arXiv / year]
+          </p>
+
+          <p class="publication-links">
+            <a href="#" target="_blank">arXiv</a>
+            <a href="#" target="_blank">PDF</a>
+          </p>
+
+        </article>
+
+
+        <article class="publication">
+
+          <h3>
+            PhD Thesis — Through the Horizon and Back:
+            Lifting the Veil on Black Hole Thermodynamics
+          </h3>
+
+          <p class="publication-meta">
+            The Ohio State University, 2025
+          </p>
+
+          <p class="publication-links">
+
+            <a
+              href="papers/Through the Horizon and Back-Lifting the Veil on Black Hole Thermodynamics.pdf"
+              target="_blank"
+            >
+              PDF
+            </a>
+
+          </p>
+
+        </article>
+
+      </div>
+
+
+      <!-- TODO:
+           Add an INSPIRE link instead of trying to reproduce
+           your complete publication list on this page.
+      -->
+
+      <p class="more-publications">
+        <a href="#" target="_blank">
+          View all publications on INSPIRE →
+        </a>
+      </p>
+
+    </section>
+
+
+    <!-- =======================================================
+         ABOUT
+         ======================================================= -->
+
+    <section id="about" class="section">
+
+      <p class="section-number">04</p>
+
+      <h2>About</h2>
+
+      <p>
+        I completed my PhD in Physics at
+        <strong>The Ohio State University</strong> in 2025.
+        My doctoral research focused on black-hole thermodynamics,
+        horizonless extremely compact objects, black-hole microstates,
+        and the information problem.
+      </p>
+
+      <p>
+        Before that, I received an integrated B.S.–M.S. degree in Physics
+        from <strong>IISER Bhopal</strong>.
+      </p>
+
+      <p>
+        I am originally from Jaipur, India.
+      </p>
+
+      <!-- TODO:
+           Optional:
+           Add 1 short paragraph about your current fellowship,
+           broader scientific interests, or trajectory.
+
+           Keep this section biographical rather than repeating
+           the Research section.
+      -->
+
+    </section>
+
+
+    <!-- =======================================================
+         OUTREACH
+         ======================================================= -->
+
+    <section id="outreach" class="section">
+
+      <p class="section-number">05</p>
+
+      <h2>Outreach</h2>
+
+      <p>
+        I am interested in communicating ideas in fundamental physics
+        to broader audiences.
+      </p>
+
+      <p>
+        I created
+        <strong>
+          <a
+            href="https://www.youtube.com/@TimeBeforeSpace"
+            target="_blank"
+          >
+            Time Before Space
+          </a>
+        </strong>,
+        a YouTube channel featuring discussions of gravity,
+        quantum theory, and foundational questions in physics,
+        including conversations with researchers.
+      </p>
+
+      <!-- TODO:
+           Add other outreach activities only if they are
+           important enough to deserve space.
+      -->
+
+    </section>
+
+
+    <!-- =======================================================
+         CONTACT
+         ======================================================= -->
+
+    <section id="contact" class="section contact-section">
+
+      <p class="section-number">06</p>
+
+      <h2>Contact</h2>
+
+      <p>
+        University of California, Santa Barbara
+      </p>
+
+      <!-- TODO:
+           Add department / office information only if useful.
+      -->
+
+      <p>
+        <a href="mailto:madhur.time17@gmail.com">
+          madhur.time17@gmail.com
+        </a>
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer>
+
+    <p class="footer-links">
+
+      <a href="mailto:madhur.time17@gmail.com">
+        <i data-feather="mail"></i>
+        <span>Email</span>
+      </a>
+
+      <!-- TODO: Replace with current academic profile -->
+
+      <a href="https://physics.osu.edu/people/mehta.493" target="_blank">
+        <i data-feather="book-open"></i>
+        <span>Academic Profile</span>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/madhur-mehta-a7a400120/"
+        target="_blank"
+      >
+        <i data-feather="linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+
+      <a
+        href="https://www.youtube.com/@TimeBeforeSpace"
+        target="_blank"
+      >
+        <i data-feather="youtube"></i>
+        <span>YouTube</span>
+      </a>
+
     </p>
 
-    <h3>Outreach</h3>
     <p>
-      I also work on communicating ideas in fundamental physics. I run the 
-      YouTube channel <strong>Time Before Space</strong>, where I discuss 
-      conceptual questions in gravity and quantum theory and interview 
-      physicists about foundational problems in modern physics.
+      © 2026 Madhur Mehta
     </p>
 
-  </div>
+  </footer>
 
-  <div class="image">
-    <img src="Madhur.jpeg" alt="Madhur Mehta">
-    <p>
-      <strong><a href="http://www.qurios.caltech.edu/#fellowship">Heising–Simons Postdoctoral Fellow</a></strong><br>
-      University of California Santa Barbara
-    </p>
-  </div>
-  </div>
-</main>
-  
-<footer>
-  <p class="footer-links">
-    <a href="mailto:madhur.time17@gmail.com">
-      <i data-feather="mail"></i>
-      <span>Email</span>
-    </a>
-    <a href="https://physics.osu.edu/people/mehta.493">
-      <i data-feather="book-open"></i>
-      <span>OSU Profile</span>
-    </a>
-    <a href="https://www.linkedin.com/in/madhur-mehta-a7a400120/">
-      <i data-feather="linkedin"></i>
-      <span>LinkedIn</span>
-    </a>
-    <a href="https://www.youtube.com/@TimeBeforeSpace">
-      <i data-feather="youtube"></i>
-      <span>YouTube</span>
-    </a>
-  </p>
-  <p>© 2026 Madhur Mehta</p>
-</footer>
 
-<script src="https://unpkg.com/feather-icons"></script>
-<script>
-  feather.replace();
-</script>
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
 
-<!-- Zoom-out scroll effect -->
-<script>
-  const bg = document.querySelector('.hero-bg');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const scale = 1 +Math.min(scrollY / 1000, 0.3); // Zoom out up to 1.3x
-    bg.style.transform = `scale(${scale})`;
-  });
-</script>
-<!--- Mobile Friendly--->
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("mobileNav");
-    nav.classList.toggle("show");
-  }
-</script>
   <script>
-  // Array of greetings to cycle through
-  const greetings = [
-  "Hi!",            // English
-  "Hello!",         // English
-  "Hey!",           // English
-  "Namaste!",       // Hindi (Latin)
-  "नमस्ते!",         // Hindi (Devanagari)
-  "Konnichiwa!",    // Japanese (Romaji)
-  "こんにちは!",       // Japanese (Hiragana)
-  "Hola!",          // Spanish
-  "Bonjour!",       // French
-  "Salut!",         // French casual
-  "Ciao!",          // Italian
-  "Hallo!",         // German
-  "Guten Tag!",     // German formal
-  "Salam!",         // Arabic (Latin)
-  "سلام!",          // Arabic (Arabic script)
-  "Shalom!",        // Hebrew (Latin)
-  "שָׁלוֹם!",        // Hebrew (Hebrew script)
-  "안녕하세요!",        // Korean
-  "你好!",           // Chinese (Mandarin)
-  "Привет!",        // Russian
-  "Здравствуйте!",   // Russian formal
-  "Γειά σου!",       // Greek
-  "Hej!",           // Swedish/Danish
-  "Merhaba!",       // Turkish
-  "Sawubona!",      // Zulu
-  "Selamat pagi!",  // Malay / Indonesian
-  "Sawasdee!",      // Thai (Romanized)
-  "สวัสดี!",        // Thai
-  "Xin chào!",      // Vietnamese
-  "Ahoj!"           // Czech
-];
+    feather.replace();
+  </script>
 
 
-const greetingElement = document.getElementById("greeting");
+  <!-- Hero scroll effect -->
 
-  function updateGreeting() {
-    // Pick a random greeting
-    const randomIndex = Math.floor(Math.random() * greetings.length);
-    const greeting = greetings[randomIndex];
+  <script>
 
-    // Fade out first
-    greetingElement.style.transition = "opacity 0.5s ease-in-out";
-    greetingElement.style.opacity = 0;
+    const bg = document.querySelector('.hero-bg');
 
-    // Wait for fade-out to finish before changing text
-    setTimeout(() => {
-      greetingElement.textContent = greeting;
-      greetingElement.style.opacity = 1; // fade in
-    }, 500); // 500ms matches the CSS transition duration
-  }
+    window.addEventListener('scroll', () => {
 
-  // Initial greeting
-  updateGreeting();
+      const scrollY = window.scrollY;
 
-  // Change greeting every 3 seconds randomly
-  setInterval(updateGreeting, 5000);
-</script>
-  
+      const scale =
+        1 + Math.min(scrollY / 1000, 0.3);
+
+      bg.style.transform = `scale(${scale})`;
+
+    });
+
+  </script>
+
+
+  <!-- Mobile navigation -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const nav =
+        document.getElementById("mobileNav");
+
+      nav.classList.toggle("show");
+
+    }
+
+
+    /*
+      Close mobile navigation after selecting
+      an anchor link.
+    */
+
+    document
+      .querySelectorAll('#mobileNav a')
+      .forEach(link => {
+
+        link.addEventListener('click', () => {
+
+          document
+            .getElementById("mobileNav")
+            .classList.remove("show");
+
+        });
+
+      });
+
+  </script>
+
 </body>
+
 </html>
