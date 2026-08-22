@@ -144,6 +144,11 @@
 .app-description p:first-child {
   margin-top: 0;
 }
+#outreach .app-icon {
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+}
 
 
 /* Mobile */
